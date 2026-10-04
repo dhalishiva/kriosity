@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Faq, ProductHero, Steps } from "@/components/ProductDetail";
+import { Faq, ProductHero, StickyVisitBar, Steps } from "@/components/ProductDetail";
 import ProductGlyph from "@/components/ProductGlyph";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import JsonLd from "@/components/JsonLd";
 import { getProduct, products } from "@/lib/products";
-import { ctaHref } from "@/lib/cta";
+import { ctaHref, siteHost } from "@/lib/cta";
 import { site } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -227,8 +227,10 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
       <CtaBand
         title={p.status === "Live" ? `Ready to try ${p.name}?` : `Want ${p.name} at your site?`}
         body={p.status === "Live" ? p.oneLiner : "Early-access pilots are open. Tell me about your plant, your PLCs and how many sites you run."}
-        primary={p.url ? { href: "/contact", label: "Ask a question" } : { href: "/contact?topic=gateway", label: "Request early access" }}
+        primary={p.url ? { href: p.url, label: `Visit ${siteHost(p)}` } : { href: "/contact?topic=gateway", label: "Request early access" }}
+        secondary={{ href: `/contact?topic=${p.slug}`, label: "Ask a question" }}
       />
+      <StickyVisitBar p={p} />
       <JsonLd data={ld} />
     </>
   );

@@ -48,7 +48,10 @@ export default function ProductRows({ items }: { items: Product[] }) {
                   {p.audience}
                 </p>
 
-                <p className="col-span-2 col-start-1 font-medium md:col-span-1 md:col-start-auto">{p.fromPrice}</p>
+                <div className="col-span-2 col-start-1 md:col-span-1 md:col-start-auto">
+                  <p className="font-medium">{p.fromPrice}</p>
+                  {p.url && <p className="text-sm text-slate">{new URL(p.url).host}</p>}
+                </div>
 
                 <span
                   aria-hidden="true"

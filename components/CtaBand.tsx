@@ -34,7 +34,17 @@ export default function CtaBand({
           <h2 className="text-4xl md:text-6xl" style={{ fontVariationSettings: '"wdth" 85' }}>{title}</h2>
           <p className="mt-5 max-w-xl text-lg text-white/75">{body}</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Link href={primary.href} className="btn btn-light">{primary.label}</Link>
+            {primary.href.startsWith("http") ? (
+              <a href={primary.href} target="_blank" rel="noopener" className="btn btn-light">
+                {primary.label}
+                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+                  <path d="M5 2.5h6.5V9M11.5 2.5 3 11" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            ) : (
+              <Link href={primary.href} className="btn btn-light">{primary.label}</Link>
+            )}
             <Link href={secondary.href} className="btn text-white shadow-[inset_0_0_0_1.5px_rgba(255,255,255,0.3)] hover:shadow-[inset_0_0_0_1.5px_#fff]">
               {secondary.label}
             </Link>

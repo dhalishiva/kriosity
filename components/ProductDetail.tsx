@@ -2,11 +2,19 @@
 
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { AnimatePresence, motion, useScroll, useSpring, useTransform } from "motion/react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll, useSpring, useTransform } from "motion/react";
 import ProductGlyph from "./ProductGlyph";
 import StatusPill from "./StatusPill";
 import type { Product } from "@/lib/products";
-import { ctaHref } from "@/lib/cta";
+import { ctaHref, siteHost } from "@/lib/cta";
+
+export function ExternalIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" className={className}>
+      <path d="M5 2.5h6.5V9M11.5 2.5 3 11" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -73,8 +81,9 @@ export function ProductHero({ p }: { p: Product }) {
               className="btn text-white hover:brightness-110"
               style={{ background: p.color, boxShadow: `0 12px 30px -12px ${p.color}` }}
             >
-              {p.ctaLabel}
-              {p.url && <span className="sr-only"> (opens {p.name} in a new tab)</span>}
+              {p.url ? `Visit ${siteHost(p)}` : p.ctaLabel}
+              {p.url && <ExternalIcon />}
+              {p.url && <span className="sr-only"> (opens in a new tab)</span>}
             </a>
             <a href="#pricing" className="btn btn-ghost bg-paper/60">See pricing</a>
           </motion.div>
@@ -87,7 +96,16 @@ export function ProductHero({ p }: { p: Product }) {
             transition={{ type: "spring", stiffness: 70, damping: 14, delay: 0.15 }}
             className="w-full max-w-[17rem]"
           >
-            <ProductGlyph slug={p.slug} size={272} className="h-auto w-full shadow-[0_40px_80px_-30px_rgba(20,32,58,0.45)]" />
+            {p.url ? (
+              <a href={p.url} target="_blank" rel="noopener" aria-label={`Visit ${p.name} (opens in a new tab)`} className="group relative block">
+                <ProductGlyph slug={p.slug} size={272} className="h-auto w-full shadow-[0_40px_80px_-30px_rgba(20,32,58,0.45)] transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-[1.03]" />
+                <span className="absolute -bottom-4 left-1/2 inline-flex -translate-x-1/2 items-center gap-1.5 whitespace-nowrap rounded-full bg-paper px-4 py-2 text-sm font-semibold shadow-[0_10px_30px_-12px_rgba(20,32,58,0.4)]" style={{ color: p.color }}>
+                  {siteHost(p)} <ExternalIcon />
+                </span>
+              </a>
+            ) : (
+              <ProductGlyph slug={p.slug} size={272} className="h-auto w-full shadow-[0_40px_80px_-30px_rgba(20,32,58,0.45)]" />
+            )}
           </motion.div>
         </motion.div>
       </div>
@@ -176,5 +194,45 @@ export function Faq({ p }: { p: Product }) {
         );
       })}
     </ul>
+  );
+}
+
+export function StickyVisitBar({ p }: { p: Product }) {
+  const { scrollY } = useScroll();
+  const [show, setShow] = useState(false);
+  useMotionValueEvent(scrollY, "change", (y) => {
+    const nearEnd = window.innerHeight + y > document.body.scrollHeight - 520;
+    setShow(y > 520 && !nearEnd);
+  });
+  return (
+    <AnimatePresence>
+      {show && (
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
+          transition={{ type: "spring", stiffness: 260, damping: 26 }}
+          className="fixed inset-x-0 bottom-4 z-40 flex justify-center px-4"
+        >
+          <div className="flex items-center gap-3 rounded-full bg-paper/90 py-2 pl-2 pr-2 shadow-[0_20px_50px_-15px_rgba(20,32,58,0.45),0_0_0_1px_var(--color-rule)] backdrop-blur-xl sm:gap-4">
+            <ProductGlyph slug={p.slug} size={36} />
+            <div className="hidden leading-tight sm:block">
+              <p className="font-display text-base font-semibold">{p.name}</p>
+              <p className="text-xs text-slate">{p.fromPrice}</p>
+            </div>
+            <a href="#pricing" className="btn btn-ghost !px-4 !py-2.5 text-sm">Pricing</a>
+            <a
+              href={ctaHref(p)}
+              {...(p.url ? { target: "_blank", rel: "noopener" } : {})}
+              className="btn !px-4 !py-2.5 text-sm text-white hover:brightness-110"
+              style={{ background: p.color }}
+            >
+              {p.url ? "Visit site" : p.ctaLabel}
+              {p.url && <ExternalIcon />}
+            </a>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
