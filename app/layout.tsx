@@ -9,6 +9,7 @@ import { products } from "@/lib/products";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import FloatingActions from "@/components/FloatingActions";
 
 const bricolage = localFont({
   src: "./fonts/bricolage.woff2",
@@ -104,6 +105,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
           <Footer />
+          <FloatingActions />
         </Providers>
         <JsonLd data={orgLd} />
         <Analytics />

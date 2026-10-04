@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Faq, ProductHero, StickyVisitBar, Steps } from "@/components/ProductDetail";
+import { Faq, ProductHero, Steps } from "@/components/ProductDetail";
 import ProductGlyph from "@/components/ProductGlyph";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
@@ -230,7 +230,6 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
         primary={p.url ? { href: p.url, label: `Visit ${siteHost(p)}` } : { href: "/contact?topic=gateway", label: "Request early access" }}
         secondary={{ href: `/contact?topic=${p.slug}`, label: "Ask a question" }}
       />
-      <StickyVisitBar p={p} />
       <JsonLd data={ld} />
     </>
   );

@@ -6,6 +6,9 @@ export const site = {
     "Kriosity is an independent software studio building focused B2B tools: duplicate-payment detection, appointment recovery, AI governance and industrial connectivity.",
   // Change this one value if you route mail to a different inbox.
   email: "hello@kriosity.in",
+  // WhatsApp number in international format, digits only (e.g. "919876543210").
+  // Leave empty to hide the WhatsApp button.
+  whatsapp: "",
   founder: "Shiva",
   location: "Noida, India",
   github: "https://github.com/dhalishiva",

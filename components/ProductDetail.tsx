@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { AnimatePresence, motion, useMotionValueEvent, useScroll, useSpring, useTransform } from "motion/react";
+import { AnimatePresence, motion, useScroll, useSpring, useTransform } from "motion/react";
 import ProductGlyph from "./ProductGlyph";
 import StatusPill from "./StatusPill";
 import type { Product } from "@/lib/products";
@@ -197,42 +197,3 @@ export function Faq({ p }: { p: Product }) {
   );
 }
 
-export function StickyVisitBar({ p }: { p: Product }) {
-  const { scrollY } = useScroll();
-  const [show, setShow] = useState(false);
-  useMotionValueEvent(scrollY, "change", (y) => {
-    const nearEnd = window.innerHeight + y > document.body.scrollHeight - 520;
-    setShow(y > 520 && !nearEnd);
-  });
-  return (
-    <AnimatePresence>
-      {show && (
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ type: "spring", stiffness: 260, damping: 26 }}
-          className="fixed inset-x-0 bottom-4 z-40 flex justify-center px-4"
-        >
-          <div className="flex items-center gap-3 rounded-full bg-paper/90 py-2 pl-2 pr-2 shadow-[0_20px_50px_-15px_rgba(20,32,58,0.45),0_0_0_1px_var(--color-rule)] backdrop-blur-xl sm:gap-4">
-            <ProductGlyph slug={p.slug} size={36} />
-            <div className="hidden leading-tight sm:block">
-              <p className="font-display text-base font-semibold">{p.name}</p>
-              <p className="text-xs text-slate">{p.fromPrice}</p>
-            </div>
-            <a href="#pricing" className="btn btn-ghost !px-4 !py-2.5 text-sm">Pricing</a>
-            <a
-              href={ctaHref(p)}
-              {...(p.url ? { target: "_blank", rel: "noopener" } : {})}
-              className="btn !px-4 !py-2.5 text-sm text-white hover:brightness-110"
-              style={{ background: p.color }}
-            >
-              {p.url ? "Visit site" : p.ctaLabel}
-              {p.url && <ExternalIcon />}
-            </a>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-}
