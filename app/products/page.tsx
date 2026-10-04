@@ -6,12 +6,13 @@ import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import JsonLd from "@/components/JsonLd";
 import { products } from "@/lib/products";
+import ProductGlyph from "@/components/ProductGlyph";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Products — B2B software for finance, operations and industry",
   description:
-    "Every Kriosity product in one place: PaidTwice, SlotRecover, Aegistra, FlowSentinel and Gateway. Compare what each does, who it is for and what it costs.",
+    "Every Kriosity product in one place: PaidTwice, SlotRecover, Aegistra and Gateway. Compare what each does, who it is for and what it costs.",
   alternates: { canonical: "/products" },
   openGraph: { url: `${site.url}/products`, title: "Kriosity products", description: "Focused B2B tools, priced so small teams can say yes." },
 };
@@ -33,7 +34,7 @@ export default function ProductsPage() {
     <>
       <PageHeader
         title="Products"
-        intro="Five tools, each aimed at one specific leak in how businesses run. Filter by the kind of work you do, or compare prices below."
+        intro="Four tools, each aimed at one specific leak in how businesses run. Filter by the kind of work you do, or compare prices below."
       />
 
       <section className="wrap pb-20">
@@ -61,8 +62,8 @@ export default function ProductsPage() {
                 {products.map((p) => (
                   <tr key={p.slug} className="border-b border-rule">
                     <th scope="row" className="py-4 pr-4">
-                      <Link href={`/products/${p.slug}`} className="inline-flex items-center gap-2.5 font-display text-lg font-semibold">
-                        <span className="h-3 w-3 rotate-45 rounded-[2px]" style={{ background: p.color }} />
+                      <Link href={`/products/${p.slug}`} className="inline-flex items-center gap-3 font-display text-lg font-semibold">
+                        <ProductGlyph slug={p.slug} size={28} />
                         <span className="link-u">{p.name}</span>
                       </Link>
                     </th>
@@ -71,7 +72,6 @@ export default function ProductsPage() {
                       {p.slug === "paidtwice" && "Free scan, unlimited"}
                       {p.slug === "slotrecover" && "7-day free trial"}
                       {p.slug === "aegistra" && "Free plan, 3 systems"}
-                      {p.slug === "flowsentinel" && "Pilot on request"}
                       {p.slug === "gateway" && "Early-access pilot"}
                     </td>
                     <td className="py-4 text-slate">{p.status}</td>

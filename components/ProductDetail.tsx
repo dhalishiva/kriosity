@@ -85,9 +85,9 @@ export function ProductHero({ p }: { p: Product }) {
             initial={{ scale: 0.4, rotate: -40, opacity: 0 }}
             animate={{ scale: 1, rotate: 0, opacity: 1 }}
             transition={{ type: "spring", stiffness: 70, damping: 14, delay: 0.15 }}
-            className="grid aspect-square w-full max-w-[20rem] place-items-center rounded-[3rem] bg-paper shadow-[0_40px_80px_-40px_rgba(20,32,58,0.35)]"
+            className="w-full max-w-[17rem]"
           >
-            <ProductGlyph slug={p.slug} color={p.color} size={170} />
+            <ProductGlyph slug={p.slug} size={272} className="h-auto w-full shadow-[0_40px_80px_-30px_rgba(20,32,58,0.45)]" />
           </motion.div>
         </motion.div>
       </div>

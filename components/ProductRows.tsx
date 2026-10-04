@@ -28,7 +28,7 @@ export default function ProductRows({ items }: { items: Product[] }) {
               />
               <div className="relative grid grid-cols-[auto_1fr_auto] items-center gap-x-5 gap-y-3 px-1 py-7 md:grid-cols-[auto_minmax(0,1.5fr)_minmax(0,1fr)_10rem_auto] md:gap-x-8 md:px-4 md:py-9">
                 <div className="transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:-rotate-6 group-hover:scale-110">
-                  <ProductGlyph slug={p.slug} color={p.color} />
+                  <ProductGlyph slug={p.slug} size={52} className="shadow-[0_8px_20px_-10px_rgba(20,32,58,0.45)]" />
                 </div>
 
                 <div className="min-w-0">

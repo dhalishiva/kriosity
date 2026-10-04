@@ -33,7 +33,7 @@ export default function AboutPage() {
           </p>
           <p className="text-slate">
             That work has a pattern. A platform handles the common case well, and then something at the edge goes wrong in
-            exactly the same way at the next client. A mailbox stops connecting and nobody notices for a week. A vendor gets
+            exactly the same way at the next client. A customer asks which AI tools you use and nobody has the list. A vendor gets
             paid twice because the invoice number had a dash in it. A plant pays a heavyweight licence to read a few hundred tags.
           </p>
           <p className="text-slate">

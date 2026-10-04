@@ -209,10 +209,10 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
               <li key={o.slug}>
                 <Link
                   href={`/products/${o.slug}`}
-                  className="group flex h-full flex-col gap-4 rounded-2xl p-5 shadow-[0_0_0_1px_var(--color-rule)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1"
+                  className="group flex h-full flex-col gap-4 rounded-2xl bg-frost p-5 shadow-[0_0_0_1px_var(--color-rule)] transition-[box-shadow,transform] duration-300 hover:-translate-y-1"
                   style={{ ["--c" as string]: o.color }}
                 >
-                  <ProductGlyph slug={o.slug} color={o.color} size={36} />
+                  <ProductGlyph slug={o.slug} size={40} />
                   <span>
                     <span className="block font-display text-xl font-semibold transition-colors group-hover:text-[var(--c)]">{o.name}</span>
                     <span className="mt-1 block text-sm text-slate">{o.tagline}</span>

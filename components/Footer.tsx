@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mark } from "./Logo";
+import ProductGlyph from "./ProductGlyph";
 import { products } from "@/lib/products";
 import { nav, site } from "@/lib/site";
 
@@ -25,7 +26,7 @@ export default function Footer() {
             {products.map((p) => (
               <li key={p.slug}>
                 <Link href={`/products/${p.slug}`} className="group inline-flex items-center gap-2.5 hover:text-white">
-                  <span className="h-2 w-2 rounded-full" style={{ background: p.color }} />
+                  <ProductGlyph slug={p.slug} size={20} />
                   <span className="link-u">{p.name}</span>
                 </Link>
               </li>

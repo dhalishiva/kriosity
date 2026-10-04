@@ -8,11 +8,11 @@ import { products } from "@/lib/products";
 const principles = [
   {
     title: "Born on a client site",
-    body: "Each product began as a problem I was paid to fix by hand: a duplicate invoice, a mailbox that went quiet, an expensive licence for a simple job.",
+    body: "Each product began as a problem I was paid to fix by hand: a duplicate invoice, an AI questionnaire nobody could answer, an expensive licence for a simple job.",
   },
   {
     title: "Your data stays where it should",
-    body: "PaidTwice never uploads your payments. FlowSentinel isolates every tenant. Collecting less is a feature, not an afterthought.",
+    body: "PaidTwice never uploads your payments. Gateway runs on your own servers. Collecting less is a feature, not an afterthought.",
   },
   {
     title: "Priced so a small team can say yes",

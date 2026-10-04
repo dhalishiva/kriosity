@@ -16,13 +16,13 @@ export const metadata: Metadata = {
 const services = [
   {
     name: "AP automation",
-    color: "#0B7F72",
+    color: "#C2362B",
     summary: "Invoice capture and approval platforms, kept running and connected.",
     items: [
       "Tungsten (Kofax) ReadSoft Process Director, Mobile Approval and AP Essentials",
       "Approval-mailbox setup with Microsoft 365, IMAP and OAuth2",
       "SSO with SAML and Azure AD, and SAP connectivity troubleshooting",
-      "Workflow monitoring and alerting with FlowSentinel",
+      "Duplicate-payment audits with PaidTwice",
     ],
   },
   {
@@ -38,7 +38,7 @@ const services = [
   },
   {
     name: "Industrial connectivity",
-    color: "#2F74B5",
+    color: "#0F7B6C",
     summary: "Getting plant data out of PLCs reliably, even on air-gapped networks.",
     items: [
       "OPC server deployment and tunnelling",
@@ -49,7 +49,7 @@ const services = [
   },
   {
     name: "Custom SaaS builds",
-    color: "#5B46D6",
+    color: "#2C64F0",
     summary: "From idea to a paid product, the way the Kriosity products were built.",
     items: [
       "React and Next.js front ends with real attention to design",

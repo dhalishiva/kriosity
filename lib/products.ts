@@ -13,8 +13,9 @@ export type Product = {
   slug: string;
   name: string;
   color: string; // signature color
+  logo: string; // app-icon tile in /public/logos
   tint: string; // soft background tint
-  category: "Finance operations" | "Service businesses" | "Governance" | "Enterprise IT" | "Industrial";
+  category: "Finance operations" | "Service businesses" | "Governance" | "Industrial";
   status: Status;
   url?: string;
   ctaLabel: string;
@@ -34,9 +35,10 @@ export type Product = {
 export const products: Product[] = [
   {
     slug: "paidtwice",
+    logo: "/logos/paidtwice.svg",
     name: "PaidTwice",
-    color: "#C9820F",
-    tint: "#FBF1DE",
+    color: "#C2362B",
+    tint: "#FBE8E5",
     category: "Finance operations",
     status: "Live",
     url: "https://paidtwice.vercel.app",
@@ -85,9 +87,10 @@ export const products: Product[] = [
   },
   {
     slug: "slotrecover",
+    logo: "/logos/slotrecover.svg",
     name: "SlotRecover",
-    color: "#D23F62",
-    tint: "#FBE5EA",
+    color: "#4A51DC",
+    tint: "#E8E9FD",
     category: "Service businesses",
     status: "Live",
     url: "https://slotrecover.pro",
@@ -133,9 +136,10 @@ export const products: Product[] = [
   },
   {
     slug: "aegistra",
+    logo: "/logos/aegistra.svg",
     name: "Aegistra",
-    color: "#5B46D6",
-    tint: "#ECE9FB",
+    color: "#0377B5",
+    tint: "#DFF1FA",
     category: "Governance",
     status: "Live",
     url: "https://aegistra.vercel.app",
@@ -182,58 +186,11 @@ export const products: Product[] = [
     },
   },
   {
-    slug: "flowsentinel",
-    name: "FlowSentinel",
-    color: "#0B7F72",
-    tint: "#DDF2EF",
-    category: "Enterprise IT",
-    status: "Live",
-    url: "https://flowsentinel.cloud",
-    ctaLabel: "Visit FlowSentinel",
-    tagline: "Never lose a mailbox connection silently again.",
-    oneLiner:
-      "Watches the mailboxes behind email-driven approval workflows and alerts the right people the moment mail goes stale or a connection drops.",
-    audience: "Enterprises running mailbox-driven approval and AP workflows",
-    fromPrice: "Annual licence",
-    problem: {
-      title: "Approval workflows fail without an error.",
-      body: "When the mailbox behind an approval process loses its connection or an OAuth token expires, nothing crashes. Approvals simply stop arriving, and the first sign is an angry supplier. FlowSentinel turns that silence into an alert.",
-    },
-    steps: [
-      { title: "Connect the mailboxes", body: "Add the workflow mailboxes over IMAP with OAuth2." },
-      { title: "Set the thresholds", body: "Decide how old is too old for unprocessed mail, per mailbox." },
-      { title: "Route the alerts", body: "Send connection failures and stale mail to the right role." },
-      { title: "Fix it in one click", body: "Renew expiring tokens and review the inbox without leaving FlowSentinel." },
-    ],
-    features: [
-      { title: "Stale-mail detection", body: "Flags messages sitting unprocessed longer than they should." },
-      { title: "Connection-failure alerts", body: "Catches dropped IMAP connections and expired OAuth2 tokens." },
-      { title: "Role-based routing", body: "Alerts go to the people who can act, not a shared inbox." },
-      { title: "One-click token renewal", body: "Re-authorise a mailbox in seconds when a token expires." },
-      { title: "Live inbox viewer", body: "See what's waiting in a monitored mailbox without opening Outlook." },
-      { title: "Built for enterprise", body: "Per-tenant isolation, encrypted credentials, TOTP two-factor and weekly or monthly digests." },
-    ],
-    tiers: [
-      { name: "Enterprise", price: "Annual licence", blurb: "Priced per tenant and mailbox count.", features: ["Per-tenant isolated deployment", "Unlimited alert recipients", "Digest reports", "Partner and reseller programme"], highlight: true },
-    ],
-    forWho: ["Accounts payable operations", "Enterprise application support teams", "AP automation partners and integrators", "IT teams running Microsoft 365 mailboxes"],
-    faq: [
-      { q: "Which mail platforms are supported?", a: "IMAP mailboxes with OAuth2, including Microsoft 365." },
-      { q: "Is each customer isolated?", a: "Yes. Every tenant runs in its own isolated environment, and stored credentials are encrypted per tenant." },
-      { q: "Do you work with partners?", a: "Yes. Integrators and AP automation partners can resell and deploy FlowSentinel for their clients." },
-    ],
-    seo: {
-      title: "FlowSentinel — Approval workflow mailbox monitoring",
-      description: "Detect stale mail and dropped mailbox connections behind email-driven approval workflows. IMAP + OAuth2 monitoring with role-based alerts for enterprises.",
-      keywords: ["approval workflow monitoring", "mailbox monitoring", "IMAP OAuth2 monitoring", "AP workflow alerts", "stale email detection"],
-      appCategory: "BusinessApplication",
-    },
-  },
-  {
     slug: "gateway",
+    logo: "/logos/gateway.svg",
     name: "Gateway",
-    color: "#2F74B5",
-    tint: "#E1ECF7",
+    color: "#0F7B6C",
+    tint: "#DDF1EC",
     category: "Industrial",
     status: "In development",
     ctaLabel: "Request early access",

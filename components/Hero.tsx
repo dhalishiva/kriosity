@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { motion } from "motion/react";
 import Crystal from "./Crystal";
+import ProductGlyph from "./ProductGlyph";
 import { products } from "@/lib/products";
 
 const lines = ["Focused software", "for the problems", "big systems leave", "behind."];
@@ -69,10 +70,10 @@ export default function Hero() {
                   onPointerLeave={() => setActive(null)}
                   onFocus={() => setActive(p.slug)}
                   onBlur={() => setActive(null)}
-                  className="inline-flex items-center gap-2 rounded-full bg-paper px-3.5 py-2 text-sm font-medium shadow-[0_0_0_1px_var(--color-rule)] transition-[box-shadow,color] duration-200"
+                  className="inline-flex items-center gap-2 rounded-full bg-paper py-1.5 pl-1.5 pr-3.5 text-sm font-medium shadow-[0_0_0_1px_var(--color-rule)] transition-[box-shadow,color] duration-200"
                   style={active === p.slug ? { boxShadow: `0 0 0 1.5px ${p.color}`, color: p.color } : undefined}
                 >
-                  <span className="h-2.5 w-2.5 rotate-45 rounded-[2px]" style={{ background: p.color }} />
+                  <ProductGlyph slug={p.slug} size={20} />
                   {p.name}
                 </Link>
               </motion.li>

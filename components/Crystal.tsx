@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { products } from "@/lib/products";
+import ProductGlyph from "./ProductGlyph";
 
 type P = [number, number];
 const T: P = [250, 28];
@@ -30,12 +31,12 @@ const facets: Facet[] = [
   { pts: [T, IR, UR], shade: 0.45 },
   { pts: [UL, ML, G1, IL], shade: 0.55 },
   { pts: [IL, G1, G2, CM], slug: "aegistra" },
-  { pts: [CM, G2, G3, IR], slug: "flowsentinel" },
+  { pts: [CM, G2, G3, IR], shade: 0.95 },
   { pts: [IR, G3, MR, UR], shade: 0.35 },
   { pts: [ML, G1, B], slug: "gateway" },
   { pts: [G1, G2, B], slug: "paidtwice" },
   { pts: [G2, G3, B], slug: "slotrecover" },
-  { pts: [G3, MR, B], fill: "#2C64F0" },
+  { pts: [G3, MR, B], fill: "#14203A" },
 ];
 
 const centroid = (pts: P[]): P => [
@@ -171,7 +172,12 @@ export default function Crystal({
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.2 }}
             >
-              <Link href={`/products/${activeProduct.slug}`} className="font-display text-xl font-semibold" style={{ color: activeProduct.color }}>
+              <Link
+                href={`/products/${activeProduct.slug}`}
+                className="inline-flex items-center gap-2 font-display text-xl font-semibold"
+                style={{ color: activeProduct.color }}
+              >
+                <ProductGlyph slug={activeProduct.slug} size={26} />
                 {activeProduct.name}
               </Link>
               <p className="text-sm text-slate">{activeProduct.tagline}</p>
