@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="wrap grid items-center gap-10 pb-16 pt-10 md:pt-16 lg:grid-cols-[1.15fr_1fr] lg:gap-6 lg:pb-24">
         <div>
           <h1
-            className="font-display font-semibold leading-[0.95] tracking-[-0.045em]"
+            className="font-display font-semibold leading-[0.95] tracking-[-0.035em]"
             style={{ fontSize: "clamp(2.9rem, 7.4vw, 6.1rem)", fontVariationSettings: '"wdth" 82' }}
           >
             {lines.map((line, i) => (

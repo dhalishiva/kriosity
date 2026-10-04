@@ -36,8 +36,8 @@ export function ProductHero({ p }: { p: Product }) {
           </motion.div>
 
           <h1
-            className="mt-4 overflow-hidden pb-[0.05em] font-display font-bold leading-[0.9] tracking-[-0.055em]"
-            style={{ fontSize: "clamp(3.4rem, 11vw, 8.5rem)", fontVariationSettings: '"wdth" 76', color: p.color }}
+            className="mt-4 overflow-hidden pb-[0.05em] font-display font-bold leading-[0.95] tracking-[-0.04em]"
+            style={{ fontSize: "clamp(3.2rem, 10vw, 8rem)", fontVariationSettings: '"wdth" 84', color: p.color }}
           >
             <motion.span className="block" initial={{ y: "100%" }} animate={{ y: 0 }} transition={{ duration: 0.9, ease }}>
               {p.name}

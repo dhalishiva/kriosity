@@ -5,7 +5,7 @@ export default function PageHeader({ title, intro }: { title: string; intro?: st
   return (
     <section className="wrap pb-12 pt-12 md:pb-16 md:pt-20">
       <h1
-        className="max-w-4xl font-display font-semibold leading-[0.95] tracking-[-0.045em]"
+        className="max-w-4xl font-display font-semibold leading-[0.95] tracking-[-0.035em]"
         style={{ fontSize: "clamp(2.6rem, 6.5vw, 5.4rem)", fontVariationSettings: '"wdth" 82' }}
       >
         <span className="block overflow-hidden pb-[0.06em]">

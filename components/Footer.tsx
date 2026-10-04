@@ -55,8 +55,8 @@ export default function Footer() {
 
       <div className="wrap relative" aria-hidden="true">
         <p
-          className="select-none font-display font-bold leading-[0.8] tracking-[-0.06em] text-white/[0.07]"
-          style={{ fontSize: "clamp(5rem, 22vw, 19rem)", fontVariationSettings: '"wdth" 75' }}
+          className="select-none pb-[0.12em] font-display font-bold leading-[0.85] tracking-[-0.03em] text-white/[0.07]"
+          style={{ fontSize: "clamp(5rem, 21vw, 18rem)", fontVariationSettings: '"wdth" 88' }}
         >
           kriosity
         </p>

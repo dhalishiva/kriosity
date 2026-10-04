@@ -169,7 +169,11 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
                   className={`btn mt-8 justify-center ${t.highlight ? "text-white hover:brightness-110" : "btn-ghost"}`}
                   style={t.highlight ? { background: p.color } : undefined}
                 >
-                  {t.price === "Custom" || t.price === "Annual licence" ? `Contact about ${t.name}` : p.ctaLabel}
+                  {t.price === "Custom" || t.price === "Annual licence"
+                    ? `Contact about ${t.name}`
+                    : t.price === "$0" || p.tiers.length === 1
+                      ? p.ctaLabel
+                      : `Get ${t.name}`}
                 </a>
               </Reveal>
             ))}
