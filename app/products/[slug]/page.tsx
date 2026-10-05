@@ -40,11 +40,11 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
   const url = `${site.url}/products/${p.slug}`;
 
   const offers = p.tiers
-    .filter((t) => /^\$\d/.test(t.price))
+    .filter((t) => /^\$\d/.test(t.price) || t.price === "Free")
     .map((t) => ({
       "@type": "Offer",
       name: t.name,
-      price: t.price.replace(/[^0-9.]/g, ""),
+      price: t.price === "Free" ? "0" : t.price.replace(/[^0-9.]/g, ""),
       priceCurrency: "USD",
       url: p.url ?? url,
       availability: p.status === "Live" ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
@@ -129,7 +129,11 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
           <Reveal>
             <h2 className="text-4xl md:text-5xl" style={{ fontVariationSettings: '"wdth" 85' }}>Pricing</h2>
             <p className="measure mt-4 text-lg text-slate">
-              {p.status === "Live" ? "Prices in US dollars. Taxes may apply." : "Planned pricing. Early-access sites get it locked in."}
+              {p.tiers.every((t) => t.price === "Free")
+                ? "Free to use. No account or card needed."
+                : p.status === "Live"
+                  ? "Prices in US dollars. Taxes may apply."
+                  : "Planned pricing. Early-access sites get it locked in."}
             </p>
           </Reveal>
           <div

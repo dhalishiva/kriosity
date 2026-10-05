@@ -15,7 +15,7 @@ export type Product = {
   color: string; // signature color
   logo: string; // app-icon tile in /public/logos
   tint: string; // soft background tint
-  category: "Finance operations" | "Service businesses" | "Governance" | "Industrial";
+  category: "Finance operations" | "Service businesses" | "Governance" | "Everyday tools" | "Industrial";
   status: Status;
   url?: string;
   ctaLabel: string;
@@ -183,6 +183,54 @@ export const products: Product[] = [
       description: "Track every AI system, its owner and priority. Answer customer AI security questionnaires with PDF and CSV evidence. Free for 3 systems, from $5/month.",
       keywords: ["AI governance software", "AI register", "AI inventory tool", "AI risk register", "AI security questionnaire"],
       appCategory: "BusinessApplication",
+    },
+  },
+  {
+    slug: "beamdrop",
+    logo: "/logos/beamdrop.svg",
+    name: "BeamDrop",
+    color: "#2B50FF",
+    tint: "#E8EDFF",
+    category: "Everyday tools",
+    status: "Live",
+    url: "https://beamdrop.kriosity.in",
+    ctaLabel: "Send a file",
+    tagline: "Send files of any size, device to device.",
+    oneLiner:
+      "Open BeamDrop on both devices and the file streams straight from one browser to the other. Nothing is uploaded, so there is no size limit and nothing is stored.",
+    audience: "Anyone moving big files between their own devices or to someone nearby",
+    fromPrice: "Free",
+    problem: {
+      title: "Big files get stuck in the middle.",
+      body: "Most transfer sites upload your file to a server first, then make the other device download it. That is where size caps, waiting and storage limits come from. BeamDrop skips the server, so a 10 GB video goes from laptop to phone without a cable, an app or an account.",
+    },
+    steps: [
+      { title: "Pick a file", body: "Open BeamDrop on the sending device, choose the file and get a six-character code." },
+      { title: "Join from the other device", body: "Open BeamDrop there, enter the code or scan the QR code, and tap Accept." },
+      { title: "It streams across", body: "The file travels in small pieces straight between the two browsers and is saved as it arrives." },
+    ],
+    features: [
+      { title: "No size limit", body: "Nothing passes through a server, so the only limit is free space on the receiving device." },
+      { title: "Never uploaded", body: "Files go device to device over an encrypted connection. The server only introduces the two browsers." },
+      { title: "No app or account", body: "Works in current Chrome, Edge, Firefox and Safari on computers and phones." },
+      { title: "Code or QR", body: "Join with a six-character code or by scanning a QR code. Each code works for one device." },
+      { title: "Receiver says yes first", body: "Nothing is sent until the receiving device accepts the file." },
+      { title: "Saves as it arrives", body: "Large files stream to disk instead of filling the browser's memory." },
+    ],
+    tiers: [
+      { name: "BeamDrop", price: "Free", blurb: "Send as much as you like.", features: ["Any file size", "No account needed", "Phones and computers", "Encrypted, device to device"], highlight: true },
+    ],
+    forWho: ["Moving videos and photos from phone to laptop", "Sharing large project files with a colleague", "Getting files onto a device without cables", "Anyone tired of upload size caps"],
+    faq: [
+      { q: "Is there really no size limit?", a: "BeamDrop does not set one, because the file is never uploaded. The practical limits are free storage on the receiving device and how long you keep both devices open." },
+      { q: "Can you see my files?", a: "No. Files go straight from one device to the other over an encrypted connection and never reach our servers." },
+      { q: "Does it work on iPhone and iPad?", a: "Yes, in current browsers. iOS limits very large downloads, so for files of several gigabytes receive on a computer or an Android phone if you can." },
+    ],
+    seo: {
+      title: "BeamDrop — Send large files device to device, no size limit",
+      description: "Free browser-to-browser file transfer. Send files of any size from computer to phone with a code or QR. Nothing is uploaded, no account needed.",
+      keywords: ["send large files", "file transfer no size limit", "send file from pc to phone", "peer to peer file transfer", "browser file sharing"],
+      appCategory: "UtilitiesApplication",
     },
   },
   {
