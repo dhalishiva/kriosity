@@ -10,7 +10,7 @@ export const site = {
   supportEmail: "support@kriosity.in",
   // WhatsApp number in international format, digits only (e.g. "919876543210").
   // Leave empty to hide the WhatsApp button.
-  whatsapp: "",
+  whatsapp: "919716414417",
   founder: "Shiva",
   location: "Noida, India",
   github: "https://github.com/dhalishiva",
