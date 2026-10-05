@@ -21,8 +21,8 @@ export default function Privacy() {
         </p>
         <h2>When you contact us</h2>
         <p>
-          The contact form opens your own email app. Nothing is stored by this site. When you email us, we keep the message and
-          your address to reply and for our records, and never sell or share them for marketing.
+          Messages sent through the contact form are delivered to our Microsoft 365 mailbox and are not stored by this website.
+          We keep the message and your address to reply and for our records, and never sell or share them for marketing.
         </p>
         <h2>Product data</h2>
         <p>

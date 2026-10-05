@@ -4,8 +4,10 @@ export const site = {
   tagline: "Focused software for the problems big systems leave behind.",
   description:
     "Kriosity is an independent software studio building focused B2B tools: duplicate-payment detection, appointment recovery, AI governance and industrial connectivity.",
-  // Change this one value if you route mail to a different inbox.
+  // General enquiries, sales and partnerships.
   email: "hello@kriosity.in",
+  // Customers who need help with an existing account.
+  supportEmail: "support@kriosity.in",
   // WhatsApp number in international format, digits only (e.g. "919876543210").
   // Leave empty to hide the WhatsApp button.
   whatsapp: "",

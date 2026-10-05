@@ -17,3 +17,7 @@ npm run dev
 - `lib/site.ts` — site name, URL and contact email.
 - `components/Crystal.tsx` — the hero gem. Each coloured facet maps to a product slug.
 - `app/sitemap.ts`, `app/robots.ts`, `app/opengraph-image.tsx` — SEO.
+
+## Contact form email
+
+`app/api/contact/route.ts` sends form submissions through SMTP (Microsoft 365). Set the variables in `.env.example` in Vercel → Project → Settings → Environment Variables, then redeploy. Support requests go to `SUPPORT_TO`; everything else goes to `CONTACT_TO`. Replies go straight to the visitor.

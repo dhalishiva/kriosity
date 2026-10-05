@@ -31,7 +31,8 @@ export default function ContactPage() {
           </div>
           <div>
             <h2 className="font-sans text-sm font-semibold text-slate">Already a customer?</h2>
-            <p className="mt-1 text-slate">Use the support link inside the product so the request reaches the right place with your account details.</p>
+            <a href={`mailto:${site.supportEmail}`} className="link-u mt-1 inline-block font-display text-2xl font-semibold">{site.supportEmail}</a>
+            <p className="text-slate">Or choose &ldquo;Support for an existing account&rdquo; in the form. Include the email you signed up with.</p>
           </div>
         </aside>
       </section>

@@ -75,6 +75,10 @@ const orgLd = {
       url: site.url,
       logo: `${site.url}/icon.svg`,
       email: site.email,
+      contactPoint: [
+        { "@type": "ContactPoint", contactType: "sales", email: site.email, availableLanguage: ["English", "Hindi"] },
+        { "@type": "ContactPoint", contactType: "customer support", email: site.supportEmail, availableLanguage: ["English", "Hindi"] },
+      ],
       founder: { "@type": "Person", name: site.founder },
       address: { "@type": "PostalAddress", addressLocality: "Noida", addressRegion: "Uttar Pradesh", addressCountry: "IN" },
       sameAs: [site.github],
