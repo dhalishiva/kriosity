@@ -57,6 +57,10 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   category: "technology",
+  other: {
+    // Pinterest domain verification
+    "p:domain_verify": "e5c7187b723500f0f1cdb70acd924802",
+  },
 };
 
 export const viewport: Viewport = {
