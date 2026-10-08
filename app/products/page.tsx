@@ -70,7 +70,7 @@ export default function ProductsPage() {
                     <td className="py-4 pr-4">{p.fromPrice}</td>
                     <td className="py-4 pr-4 text-slate">
                       {p.slug === "paidtwice" && "Free scan, unlimited"}
-                      {p.slug === "slotrecover" && "7-day free trial"}
+                      {p.slug === "slotrecover" && "30-day free trial"}
                       {p.slug === "aegistra" && "Free plan, 3 systems"}
                       {p.slug === "beamdrop" && "Free to use"}
                       {p.slug === "gateway" && "Early-access pilot"}

@@ -67,10 +67,7 @@ export default function Header() {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-2">
-            <Link href="/products" className="btn btn-primary hidden !py-2.5 sm:inline-flex">
-              Browse products
-            </Link>
+          <div className="flex items-center gap-2 md:hidden">
             <button
               type="button"
               className="relative grid h-11 w-11 place-items-center rounded-full md:hidden"

@@ -232,7 +232,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
         title={p.status === "Live" ? `Ready to try ${p.name}?` : `Want ${p.name} at your site?`}
         body={p.status === "Live" ? p.oneLiner : "Early-access pilots are open. Tell me about your plant, your PLCs and how many sites you run."}
         primary={p.url ? { href: p.url, label: `Visit ${siteHost(p)}` } : { href: "/contact?topic=gateway", label: "Request early access" }}
-        secondary={{ href: `/contact?topic=${p.slug}`, label: "Ask a question" }}
+        secondary={{ href: `/contact?topic=${p.slug}`, label: "Contact me" }}
       />
       <JsonLd data={ld} />
     </>

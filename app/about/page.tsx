@@ -89,7 +89,7 @@ export default function AboutPage() {
             ))}
           </ul>
           <p className="mt-10 text-slate">
-            Want the products rather than the stack? <Link href="/products" className="link-u font-medium text-ink">See the catalogue</Link>.
+            Want the products rather than the stack? <Link href="/products" className="link-u font-medium text-ink">See products</Link>.
           </p>
         </div>
       </section>

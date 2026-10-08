@@ -60,7 +60,6 @@ function istStatus() {
 
 function WhatsAppWidget({ product }: { product?: Product }) {
   const [open, setOpen] = useState(false);
-  const [teaser, setTeaser] = useState(false);
   const [status, setStatus] = useState({ online: true, text: "Usually replies within an hour" });
   const panelRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -68,25 +67,8 @@ function WhatsAppWidget({ product }: { product?: Product }) {
 
   useEffect(() => setStatus(istStatus()), [open]);
 
-  // A one-time nudge per visit, after the visitor has had time to look around.
-  useEffect(() => {
-    let seen = false;
-    try {
-      seen = sessionStorage.getItem("kr-wa-teaser") === "1";
-    } catch {}
-    if (seen) return;
-    const t = setTimeout(() => {
-      setTeaser(true);
-      try {
-        sessionStorage.setItem("kr-wa-teaser", "1");
-      } catch {}
-    }, 12000);
-    return () => clearTimeout(t);
-  }, []);
-
   useEffect(() => {
     if (!open) return;
-    setTeaser(false);
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setOpen(false);
@@ -119,7 +101,7 @@ function WhatsAppWidget({ product }: { product?: Product }) {
             exit={{ opacity: 0, y: 12, scale: 0.96 }}
             transition={{ type: "spring", stiffness: 340, damping: 28 }}
             style={{ transformOrigin: "bottom right" }}
-            className="absolute bottom-[4.5rem] right-0 w-[min(22rem,calc(100vw-2.5rem))] overflow-hidden rounded-3xl bg-paper shadow-[0_30px_70px_-20px_rgba(20,32,58,0.5),0_0_0_1px_var(--color-rule)]"
+            className="absolute bottom-16 right-0 w-[min(22rem,calc(100vw-2.5rem))] overflow-hidden rounded-3xl bg-paper shadow-[0_30px_70px_-20px_rgba(20,32,58,0.5),0_0_0_1px_var(--color-rule)]"
           >
             <div className="flex items-center gap-3 bg-[#075E54] px-5 py-4 text-white">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white">
@@ -208,34 +190,6 @@ function WhatsAppWidget({ product }: { product?: Product }) {
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
-        {teaser && !open && (
-          <motion.button
-            type="button"
-            onClick={() => setOpen(true)}
-            initial={{ opacity: 0, x: 12, scale: 0.9 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            exit={{ opacity: 0, x: 8, scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300, damping: 24 }}
-            className="absolute bottom-1.5 right-[4.25rem] w-max max-w-[15rem] rounded-2xl rounded-br-sm bg-paper px-4 py-2.5 text-left text-sm shadow-[0_14px_34px_-14px_rgba(20,32,58,0.45),0_0_0_1px_var(--color-rule)]"
-          >
-            <span className="font-semibold">Questions?</span>{" "}
-            <span className="text-slate">{product ? `Ask me about ${product.name} on WhatsApp.` : "Chat with me on WhatsApp."}</span>
-            <span
-              role="button"
-              aria-label="Dismiss"
-              onClick={(e) => {
-                e.stopPropagation();
-                setTeaser(false);
-              }}
-              className="absolute -left-2 -top-2 grid h-5 w-5 place-items-center rounded-full bg-ink text-[0.7rem] text-white"
-            >
-              ×
-            </span>
-          </motion.button>
-        )}
-      </AnimatePresence>
-
       <motion.button
         ref={buttonRef}
         type="button"
@@ -243,17 +197,11 @@ function WhatsAppWidget({ product }: { product?: Product }) {
         aria-expanded={open}
         aria-controls="wa-panel"
         aria-label={open ? "Close WhatsApp chat" : "Chat on WhatsApp"}
-        initial={{ opacity: 0, scale: 0.6 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20, delay: 1.2 }}
-        whileHover={{ scale: 1.08 }}
+        whileHover={{ scale: 1.06 }}
         whileTap={{ scale: 0.92 }}
-        className="relative grid h-14 w-14 place-items-center rounded-full text-white shadow-[0_14px_34px_-10px_rgba(37,211,102,0.7)]"
+        className="relative grid h-12 w-12 place-items-center rounded-full text-white shadow-[0_10px_24px_-10px_rgba(20,32,58,0.5)]"
         style={{ background: WA_GREEN }}
       >
-        {!open && (
-          <span className="absolute inset-0 animate-ping rounded-full opacity-30 [animation-duration:2.4s]" style={{ background: WA_GREEN }} aria-hidden="true" />
-        )}
         <AnimatePresence mode="wait" initial={false}>
           <motion.span
             key={open ? "x" : "wa"}
@@ -268,7 +216,7 @@ function WhatsAppWidget({ product }: { product?: Product }) {
                 <path d="m2 2 10 10M12 2 2 12" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
               </svg>
             ) : (
-              <WhatsAppIcon />
+              <WhatsAppIcon size={24} />
             )}
           </motion.span>
         </AnimatePresence>
@@ -306,7 +254,7 @@ export default function FloatingActions() {
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.92 }}
             transition={{ type: "spring", stiffness: 380, damping: 26 }}
-            className="relative mr-1 grid h-12 w-12 place-items-center rounded-full bg-paper text-ink shadow-[0_12px_30px_-12px_rgba(20,32,58,0.45),0_0_0_1px_var(--color-rule)]"
+            className="relative grid h-12 w-12 place-items-center rounded-full bg-paper text-ink shadow-[0_12px_30px_-12px_rgba(20,32,58,0.45),0_0_0_1px_var(--color-rule)]"
           >
             <svg viewBox="0 0 48 48" className="absolute inset-0 -rotate-90" aria-hidden="true">
               <motion.circle cx="24" cy="24" r="22.5" fill="none" stroke="var(--color-glacier)" strokeWidth="2" style={{ pathLength: progress }} />

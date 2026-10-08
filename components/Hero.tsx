@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { motion } from "motion/react";
 import Crystal from "./Crystal";
 import ProductGlyph from "./ProductGlyph";
 import { products } from "@/lib/products";
 
-const lines = ["Focused software", "for the problems", "big systems leave", "behind."];
+const headline = "Focused software for the problems big systems leave behind.";
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export default function Hero() {
@@ -15,23 +15,25 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="wrap grid items-center gap-10 pb-16 pt-10 md:pt-16 lg:grid-cols-[1.15fr_1fr] lg:gap-6 lg:pb-24">
+      <div className="wrap grid items-center gap-8 pb-14 pt-8 md:pt-14 lg:grid-cols-[1.45fr_1fr] lg:gap-10 lg:pb-20">
         <div>
           <h1
-            className="font-display font-semibold leading-[0.95] tracking-[-0.035em]"
-            style={{ fontSize: "clamp(2.9rem, 7.4vw, 6.1rem)", fontVariationSettings: '"wdth" 82' }}
+            className="font-display font-semibold leading-[1.02] tracking-[-0.02em]"
+            style={{ fontSize: "clamp(2.4rem, 5.4vw, 4.75rem)", fontVariationSettings: '"wdth" 88' }}
           >
-            {lines.map((line, i) => (
-              <span key={line} className="block overflow-hidden pb-[0.06em]">
+            {headline.split(" ").map((word, i) => (
+              <Fragment key={i}>
+              <span className="inline-block overflow-hidden pb-[0.08em] align-bottom">
                 <motion.span
-                  className="block"
+                  className="inline-block"
                   initial={{ y: "105%" }}
                   animate={{ y: 0 }}
-                  transition={{ duration: 0.9, ease, delay: 0.05 + i * 0.09 }}
+                  transition={{ duration: 0.8, ease, delay: 0.05 + i * 0.035 }}
                 >
-                  {line}
+                  {word}
                 </motion.span>
-              </span>
+              </span>{" "}
+              </Fragment>
             ))}
           </h1>
 
@@ -39,10 +41,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease, delay: 0.55 }}
-            className="measure mt-7 text-lg text-slate md:text-xl"
+            className="mt-6 max-w-[40rem] text-lg text-slate md:text-xl"
           >
-            Kriosity is an independent software studio. Every product here started as a real problem in enterprise finance,
-            operations or industry, and each one does a single job well.
+            Five small tools from an independent studio: catch duplicate vendor payments, refill cancelled appointments,
+            keep the AI register customers ask about, send files of any size, and get PLC data onto OPC UA.
           </motion.p>
 
           <motion.div
@@ -51,15 +53,15 @@ export default function Hero() {
             transition={{ duration: 0.7, ease, delay: 0.68 }}
             className="mt-8 flex flex-wrap gap-3"
           >
-            <Link href="/products" className="btn btn-primary">Browse products</Link>
-            <Link href="/services" className="btn btn-ghost">Work with me</Link>
+            <Link href="/products" className="btn btn-primary">See products</Link>
+            <Link href="/contact" className="btn btn-ghost">Contact me</Link>
           </motion.div>
 
           <motion.ul
             initial="hidden"
             animate="show"
             variants={{ show: { transition: { staggerChildren: 0.05, delayChildren: 0.85 } } }}
-            className="mt-12 flex flex-wrap gap-x-2 gap-y-2"
+            className="mt-10 flex flex-wrap gap-x-2 gap-y-2"
             aria-label="Products"
           >
             {products.map((p) => (

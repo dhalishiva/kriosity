@@ -6,8 +6,8 @@ import { motion, useMotionTemplate, useMotionValue, useSpring } from "motion/rea
 export default function CtaBand({
   title = "Have a workflow that keeps breaking quietly?",
   body = "Tell me about it. Some of the best products here started as a single message like that.",
-  primary = { href: "/contact", label: "Start a conversation" },
-  secondary = { href: "/products", label: "See the products" },
+  primary = { href: "/contact", label: "Contact me" },
+  secondary = { href: "/products", label: "See products" },
 }: {
   title?: string;
   body?: string;

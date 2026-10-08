@@ -133,7 +133,7 @@ export default function ServicesPage() {
       <CtaBand
         title="Describe the problem. I'll tell you if I can help."
         body="Most first conversations take twenty minutes and end with a clear next step, even if that step isn't me."
-        primary={{ href: "/contact?topic=consulting", label: "Book a first call" }}
+        primary={{ href: "/contact?topic=consulting", label: "Contact me" }}
       />
       <JsonLd data={ld} />
     </>

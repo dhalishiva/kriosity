@@ -41,7 +41,7 @@ export const products: Product[] = [
     tint: "#FBE8E5",
     category: "Finance operations",
     status: "Live",
-    url: "https://paidtwice.vercel.app",
+    url: "https://paidtwice.kriosity.in",
     ctaLabel: "Scan a file free",
     tagline: "Find the invoices you paid twice.",
     oneLiner:
@@ -68,8 +68,8 @@ export const products: Product[] = [
     ],
     tiers: [
       { name: "Free", price: "$0", blurb: "See if you have a problem.", features: ["Unlimited scans", "Top 3 findings", "Total amount at stake"] },
-      { name: "Audit Pass", price: "$149", cadence: "one time", blurb: "A full audit, no subscription.", features: ["30 days of full access", "All findings and exports", "Credit request templates"], highlight: true },
-      { name: "Pro", price: "$99", cadence: "per month", blurb: "Scan every payment run.", features: ["Everything in Audit Pass", "Ongoing access", "$990 billed yearly"] },
+      { name: "Audit Pass", price: "$15", cadence: "one time", blurb: "A full audit, no subscription.", features: ["30 days of full access", "All findings, Excel and CSV export", "Credit request email per finding"], highlight: true },
+      { name: "Pro", price: "$10", cadence: "per month", blurb: "Scan every payment run.", features: ["Everything in Audit Pass", "Saved audits and recovery tracking", "$100 billed yearly"] },
       { name: "Firm", price: "Custom", blurb: "For multi-client accounting firms.", features: ["Multiple clients", "Volume pricing", "Priority support"] },
     ],
     forWho: ["Accounts payable teams", "Controllers and finance managers", "Bookkeepers", "Outsourced AP and audit firms"],
@@ -80,7 +80,7 @@ export const products: Product[] = [
     ],
     seo: {
       title: "PaidTwice — Duplicate payment detection for accounts payable",
-      description: "Find duplicate vendor payments your ERP missed. Browser-only scanning for QuickBooks, Xero, NetSuite, SAP and more. Free scan, $149 audit pass.",
+      description: "Find duplicate vendor payments your ERP missed. Browser-only scanning for QuickBooks, Xero, NetSuite, SAP and more. Free scan, $15 audit pass.",
       keywords: ["duplicate payment detection", "duplicate invoice software", "accounts payable audit", "AP recovery", "duplicate vendor payments"],
       appCategory: "FinanceApplication",
     },
@@ -93,8 +93,8 @@ export const products: Product[] = [
     tint: "#E8E9FD",
     category: "Service businesses",
     status: "Live",
-    url: "https://slotrecover.pro",
-    ctaLabel: "Start 7-day trial",
+    url: "https://www.slotrecover.pro",
+    ctaLabel: "Start 30-day trial",
     tagline: "Every empty slot is lost revenue. Get it back.",
     oneLiner:
       "Confirms appointments a day ahead, catches cancellations early and refills the slot from your waitlist automatically.",
@@ -119,17 +119,17 @@ export const products: Product[] = [
       { title: "Installs like an app", body: "Add it to your phone's home screen. No app store needed." },
     ],
     tiers: [
-      { name: "SlotRecover", price: "$29", cadence: "per month", blurb: "One plan, everything included.", features: ["Unlimited confirmations", "Waitlist recovery", "WhatsApp nudges", "7-day free trial, cancel anytime"], highlight: true },
+      { name: "SlotRecover", price: "$29", cadence: "per month", blurb: "One plan, everything included.", features: ["Unlimited confirmations", "Waitlist recovery", "WhatsApp nudges", "30-day free trial, no card needed"], highlight: true },
     ],
     forWho: ["Hair salons and barbershops", "Nail studios and spas", "Massage and physio clinics", "Personal trainers and tutors", "Pet groomers and photographers"],
     faq: [
       { q: "Do I need to change my booking system?", a: "No. SlotRecover sits alongside how you take bookings today and focuses on confirmations and refilling cancellations." },
       { q: "Is client data handled safely?", a: "Data is encrypted and handled in line with GDPR." },
-      { q: "What happens after the trial?", a: "Nothing is charged during the 7-day trial. Continue at $29 a month or cancel any time." },
+      { q: "What happens after the trial?", a: "The trial lasts 30 days and needs no card. Then continue from $29 a month, billed monthly, every six months or yearly, or cancel any time from Settings." },
     ],
     seo: {
       title: "SlotRecover — Reduce no-shows and refill cancelled appointments",
-      description: "Automatic appointment confirmations, no-show alerts and waitlist recovery for salons, spas, clinics and trainers. $29/month with a 7-day free trial.",
+      description: "Automatic appointment confirmations, no-show alerts and waitlist recovery for salons, spas, clinics and trainers. From $29/month with a 30-day free trial.",
       keywords: ["reduce no-shows", "appointment confirmation software", "waitlist app for salons", "cancellation recovery", "appointment reminders"],
       appCategory: "BusinessApplication",
     },
@@ -142,7 +142,7 @@ export const products: Product[] = [
     tint: "#DFF1FA",
     category: "Governance",
     status: "Live",
-    url: "https://aegistra.vercel.app",
+    url: "https://aegistra.kriosity.in",
     ctaLabel: "Start free",
     tagline: "Know where AI is used. Know who owns it.",
     oneLiner:

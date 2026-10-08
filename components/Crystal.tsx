@@ -83,7 +83,7 @@ export default function Crystal({
       ref={ref}
       onPointerMove={onMove}
       onPointerLeave={onLeave}
-      className="relative mx-auto w-full max-w-[30rem] [perspective:1100px]"
+      className="relative mx-auto w-full max-w-[13rem] sm:max-w-[20rem] lg:max-w-[28rem] [perspective:1100px]"
     >
       {/* soft halo behind the gem */}
       <motion.div
@@ -191,7 +191,8 @@ export default function Crystal({
               transition={{ delay: 1.4 }}
               className="pt-3 text-sm text-slate"
             >
-              Each coloured facet is a product. Point at one.
+              <span className="[@media(hover:none)]:hidden">Each coloured facet is a product. Point at one.</span>
+              <span className="hidden [@media(hover:none)]:inline">Tap a coloured facet to open its product.</span>
             </motion.p>
           )}
         </AnimatePresence>

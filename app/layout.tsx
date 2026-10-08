@@ -14,15 +14,15 @@ import FloatingActions from "@/components/FloatingActions";
 const bricolage = localFont({
   src: "./fonts/bricolage.woff2",
   variable: "--font-bricolage",
-  weight: "200 800",
-  display: "swap",
+  weight: "500 800",
+  display: "optional",
 });
 
 const instrument = localFont({
   src: "./fonts/instrument-sans.woff2",
   variable: "--font-instrument",
   weight: "400 700",
-  display: "swap",
+  display: "optional",
 });
 
 export const metadata: Metadata = {

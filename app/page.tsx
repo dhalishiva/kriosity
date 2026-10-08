@@ -41,7 +41,7 @@ export default function Home() {
               this is where they meet.
             </p>
           </div>
-          <Link href="/products" className="btn btn-ghost self-start md:self-auto">Compare all products</Link>
+          <Link href="/products" className="btn btn-ghost self-start md:self-auto">See products</Link>
         </Reveal>
         <div className="mt-12">
           <ProductRows items={products} />
@@ -77,10 +77,11 @@ export default function Home() {
               I&rsquo;m Shiva, a systems engineer in Noida. By day I work inside enterprise finance and manufacturing systems.
               Kriosity is where the fixes I keep rebuilding become products anyone can use.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/about" className="btn btn-primary">Read the story</Link>
-              <Link href="/services" className="btn btn-ghost">Consulting services</Link>
-            </div>
+            <p className="mt-6 text-slate">
+              <Link href="/about" className="link-u font-medium text-ink">How Kriosity started</Link>
+              <span aria-hidden="true" className="mx-3">/</span>
+              <Link href="/services" className="link-u font-medium text-ink">Consulting work</Link>
+            </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="font-sans text-sm font-semibold text-slate">Where the experience comes from</h2>
