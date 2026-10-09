@@ -32,7 +32,7 @@ const facets: Facet[] = [
   { pts: [UL, ML, G1, IL], shade: 0.55 },
   { pts: [IL, G1, G2, CM], slug: "aegistra" },
   { pts: [CM, G2, G3, IR], slug: "beamdrop" },
-  { pts: [IR, G3, MR, UR], shade: 0.35 },
+  { pts: [IR, G3, MR, UR], slug: "mahina" },
   { pts: [ML, G1, B], slug: "gateway" },
   { pts: [G1, G2, B], slug: "paidtwice" },
   { pts: [G2, G3, B], slug: "slotrecover" },

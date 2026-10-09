@@ -40,12 +40,12 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
   const url = `${site.url}/products/${p.slug}`;
 
   const offers = p.tiers
-    .filter((t) => /^\$\d/.test(t.price) || t.price === "Free")
+    .filter((t) => /^[$₹]\d/.test(t.price) || t.price === "Free")
     .map((t) => ({
       "@type": "Offer",
       name: t.name,
       price: t.price === "Free" ? "0" : t.price.replace(/[^0-9.]/g, ""),
-      priceCurrency: "USD",
+      priceCurrency: p.currency ?? "USD",
       url: p.url ?? url,
       availability: p.status === "Live" ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
     }));
@@ -131,14 +131,16 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
             <p className="measure mt-4 text-lg text-slate">
               {p.tiers.every((t) => t.price === "Free")
                 ? "Free to use. No account or card needed."
-                : p.status === "Live"
+                : p.currency === "INR"
+                  ? "Prices in Indian rupees, including GST where applicable."
+                  : p.status === "Live"
                   ? "Prices in US dollars. Taxes may apply."
                   : "Planned pricing. Early-access sites get it locked in."}
             </p>
           </Reveal>
           <div
             className={`mt-12 grid gap-5 ${
-              p.tiers.length >= 4 ? "md:grid-cols-2 xl:grid-cols-4" : p.tiers.length === 3 ? "md:grid-cols-3" : "max-w-md"
+              p.tiers.length >= 4 ? "md:grid-cols-2 xl:grid-cols-4" : p.tiers.length === 3 ? "md:grid-cols-3" : p.tiers.length === 2 ? "max-w-3xl md:grid-cols-2" : "max-w-md"
             }`}
           >
             {p.tiers.map((t, i) => (
@@ -175,7 +177,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
                 >
                   {t.price === "Custom" || t.price === "Annual licence"
                     ? `Contact about ${t.name}`
-                    : t.price === "$0" || p.tiers.length === 1
+                    : /^[$₹]0$/.test(t.price) || p.tiers.length === 1
                       ? p.ctaLabel
                       : `Get ${t.name}`}
                 </a>

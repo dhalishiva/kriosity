@@ -12,7 +12,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Products — B2B software for finance, operations and industry",
   description:
-    "Every Kriosity product in one place: PaidTwice, SlotRecover, Aegistra, BeamDrop and Gateway. Compare what each does, who it is for and what it costs.",
+    "Every Kriosity product in one place: PaidTwice, SlotRecover, Mahina, Aegistra, BeamDrop and Gateway. Compare what each does, who it is for and what it costs.",
   alternates: { canonical: "/products" },
   openGraph: { url: `${site.url}/products`, title: "Kriosity products", description: "Focused B2B tools, priced so small teams can say yes." },
 };
@@ -34,7 +34,7 @@ export default function ProductsPage() {
     <>
       <PageHeader
         title="Products"
-        intro="Five tools, each aimed at one specific leak in how businesses and people work. Filter by the kind of work you do, or compare prices below."
+        intro="Six tools, each aimed at one specific leak in how businesses and people work. Filter by the kind of work you do, or compare prices below."
       />
 
       <section className="wrap pb-20">
@@ -71,6 +71,7 @@ export default function ProductsPage() {
                     <td className="py-4 pr-4 text-slate">
                       {p.slug === "paidtwice" && "Free scan, unlimited"}
                       {p.slug === "slotrecover" && "30-day free trial"}
+                      {p.slug === "mahina" && "Free for 15 members"}
                       {p.slug === "aegistra" && "Free plan, 3 systems"}
                       {p.slug === "beamdrop" && "Free to use"}
                       {p.slug === "gateway" && "Early-access pilot"}

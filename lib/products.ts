@@ -19,6 +19,7 @@ export type Product = {
   status: Status;
   url?: string;
   ctaLabel: string;
+  currency?: "USD" | "INR"; // prices are USD unless set
   tagline: string;
   oneLiner: string;
   audience: string;
@@ -132,6 +133,57 @@ export const products: Product[] = [
       description: "Automatic appointment confirmations, no-show alerts and waitlist recovery for salons, spas, clinics and trainers. From $29/month with a 30-day free trial.",
       keywords: ["reduce no-shows", "appointment confirmation software", "waitlist app for salons", "cancellation recovery", "appointment reminders"],
       appCategory: "BusinessApplication",
+    },
+  },
+  {
+    slug: "mahina",
+    logo: "/logos/mahina.svg",
+    name: "Mahina",
+    color: "#2433A6",
+    tint: "#EEF1FF",
+    category: "Service businesses",
+    status: "Live",
+    url: "https://mahina.kriosity.in",
+    ctaLabel: "Start free",
+    currency: "INR",
+    tagline: "Get every month's fees on time, without asking twice.",
+    oneLiner:
+      "A monthly fee register for India's tutors, trainers and small services: see who owes what, send WhatsApp reminders with your UPI payment link, and share receipts.",
+    audience: "Tuition teachers, tiffin services, gyms, yoga and music classes, PGs and hostels in India",
+    fromPrice: "Free · Pro ₹149 / month",
+    problem: {
+      title: "Chasing fees is the worst part of the month.",
+      body: "Notebooks and memory don't show who has paid, and asking the same people again feels awkward. Mahina keeps the register for you and turns each reminder into one tap, with a payment link that goes straight to your own UPI.",
+    },
+    steps: [
+      { title: "Add your members", body: "Name, phone number, monthly fee and due date. Import a whole batch in a couple of minutes." },
+      { title: "See who owes what", body: "On the due date Mahina marks each person paid, partly paid or due, with the total outstanding." },
+      { title: "Send the reminder", body: "One tap opens WhatsApp with a ready message and your personal UPI payment link." },
+      { title: "Record and share a receipt", body: "When the money arrives, mark it paid. A receipt link goes back to them on WhatsApp." },
+    ],
+    features: [
+      { title: "Fee register", body: "Every member's monthly fee, due date and balance, with paid, partly paid and due at a glance." },
+      { title: "WhatsApp reminders", body: "Ready-written reminders sent from your own number, in a gentle or firm tone." },
+      { title: "UPI payment links", body: "Each reminder carries a link with your UPI QR code and the exact amount. Works with GPay, PhonePe, Paytm and any UPI app." },
+      { title: "No commission", body: "Money goes straight into your UPI account. Mahina never touches it." },
+      { title: "Hindi, Hinglish and English", body: "Send reminders in the language your members actually read." },
+      { title: "Receipts and CSV export", body: "Share a receipt link when someone pays, and export your register any time." },
+    ],
+    tiers: [
+      { name: "Free", price: "₹0", blurb: "For a single batch or a small side business.", features: ["Up to 15 members", "Unlimited WhatsApp reminders", "UPI payment links and receipts"] },
+      { name: "Pro", price: "₹149", cadence: "per month", blurb: "For growing classes and services.", features: ["Unlimited members", "Everything in Free", "Priority email support", "₹1,490 a year, two months free"], highlight: true },
+    ],
+    forWho: ["Tuition teachers and coaching classes", "Tiffin and meal services", "Gyms, yoga and dance classes", "Music teachers", "PG, hostel and rent collection"],
+    faq: [
+      { q: "Does the money go to Mahina?", a: "No. Members pay straight into your own UPI ID through any UPI app. Mahina charges no commission." },
+      { q: "Do my members need to install anything?", a: "No. They get a normal WhatsApp message from your number with a link that opens your UPI QR code and the amount due." },
+      { q: "Does Pro renew automatically?", a: "No. Pro is prepaid for a month or a year, and nothing is charged unless you choose to renew." },
+    ],
+    seo: {
+      title: "Mahina — Monthly fee collection with WhatsApp reminders and UPI",
+      description: "Fee register for tuition teachers, gyms, yoga classes and tiffin services in India. WhatsApp fee reminders with a UPI payment link, receipts, no commission. Free for 15 members.",
+      keywords: ["fee collection app", "tuition fee reminder", "WhatsApp fee reminder", "UPI payment link", "fee management app India"],
+      appCategory: "FinanceApplication",
     },
   },
   {

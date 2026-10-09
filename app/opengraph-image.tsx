@@ -14,7 +14,7 @@ export default function Image() {
           <div style={{ fontSize: 70, color: "#fff", fontWeight: 800, lineHeight: 1.02, letterSpacing: -2.5, marginTop: 36 }}>
             Focused software for the problems big systems leave behind.
           </div>
-          <div style={{ fontSize: 26, color: "rgba(255,255,255,0.65)", marginTop: 30 }}>PaidTwice · SlotRecover · Aegistra · BeamDrop · Gateway</div>
+          <div style={{ fontSize: 26, color: "rgba(255,255,255,0.65)", marginTop: 30 }}>PaidTwice · SlotRecover · Mahina · Aegistra · BeamDrop · Gateway</div>
         </div>
         <Gem size={340} />
       </div>
