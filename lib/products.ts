@@ -15,7 +15,7 @@ export type Product = {
   color: string; // signature color
   logo: string; // app-icon tile in /public/logos
   tint: string; // soft background tint
-  category: "Finance operations" | "Service businesses" | "Governance" | "Everyday tools" | "Industrial";
+  category: "Finance operations" | "Service businesses" | "Governance" | "Founder tools" | "Everyday tools" | "Industrial";
   status: Status;
   url?: string;
   ctaLabel: string;
@@ -234,6 +234,56 @@ export const products: Product[] = [
       title: "Aegistra — Lightweight AI governance register for growing teams",
       description: "Track every AI system, its owner and priority. Answer customer AI security questionnaires with PDF and CSV evidence. Free for 3 systems, from $5/month.",
       keywords: ["AI governance software", "AI register", "AI inventory tool", "AI risk register", "AI security questionnaire"],
+      appCategory: "BusinessApplication",
+    },
+  },
+  {
+    slug: "kriosityops",
+    logo: "/logos/kriosityops.svg",
+    name: "KriosityOps",
+    color: "#14213D",
+    tint: "#E9EDF5",
+    category: "Founder tools",
+    status: "Live",
+    url: "https://ops.kriosity.in",
+    ctaLabel: "Start free",
+    tagline: "Every app you've shipped, on one board.",
+    oneLiner:
+      "One board for founders running several products: where each app lives, what to post and when, and who is working on it right now.",
+    audience: "Founders and indie builders running more than one product",
+    fromPrice: "Free · Pro $9 / month",
+    problem: {
+      title: "Five apps means five places to remember.",
+      body: "Which Supabase account holds that project? Which repo deploys to which domain? When did you last post about it on X? Once you ship more than one thing, the answers live in your head and a dozen browser tabs. KriosityOps keeps them on one board.",
+    },
+    steps: [
+      { title: "Record where each app lives", body: "Pick the type and provider from a list, then add the account and project. Several entries per app, such as a frontend host and a separate server." },
+      { title: "Log your social posts", body: "Add the channels you use for each app with a posting rhythm. Log the link after posting, and lamps show what is due or overdue." },
+      { title: "Mark who is working on it", body: "Before handing an app to an AI tool or a teammate, set a marker so nobody else starts on it by mistake." },
+      { title: "See daily user counts", body: "Add one read-only function to your Supabase project and get a daily snapshot of new and total users. Pro, rolling out." },
+    ],
+    features: [
+      { title: "App registry", body: "Database, hosting, repo, domain, payments, email, storage and analytics for every app, with an Other option for anything not listed." },
+      { title: "Identifiers only", body: "Stores account names, project refs and console links. Never passwords or API keys." },
+      { title: "Social post log", body: "Channels per app, a posting rhythm, and due and overdue lamps so no product goes quiet." },
+      { title: "Work-in-progress marker", body: "See at a glance which app someone is already changing." },
+      { title: "Daily user counts", body: "New and total users collected every morning at 6 AM IST. Pro, rolling out." },
+      { title: "Quick links", body: "Jump straight to the Supabase console or GitHub repo for any app." },
+    ],
+    tiers: [
+      { name: "Free", price: "$0", blurb: "For your first couple of apps.", features: ["Up to 2 apps", "Full registry and social log", "Work-in-progress marker", "No card needed"] },
+      { name: "Pro", price: "$9", cadence: "per month", blurb: "For founders with a portfolio.", features: ["Unlimited apps", "Everything in Free", "Daily user counts (rolling out)", "Priority help on WhatsApp", "₹299 a month in India"], highlight: true },
+    ],
+    forWho: ["Indie founders with several products", "Solo builders shipping side projects", "Small studios running client apps", "Anyone handing work to AI coding tools"],
+    faq: [
+      { q: "Does it store passwords or API keys?", a: "No. It stores only identifiers such as account names, project refs and console links." },
+      { q: "Does it post to X or Reddit for me?", a: "No. You post as usual and log the link afterwards, so you can see what is due next." },
+      { q: "How do I pay?", a: "In India, Pro is ₹299 a month through Razorpay with UPI or card. Everywhere else it is $9 a month through PayPal. Cancel any time from Billing." },
+    ],
+    seo: {
+      title: "KriosityOps — One board for every app you run",
+      description: "Track where each of your apps lives (database, host, repo, domain), log social posts with due reminders, and mark who is working on what. Free for 2 apps, Pro $9/month.",
+      keywords: ["indie founder dashboard", "app portfolio tracker", "manage multiple SaaS apps", "social post tracker", "founder ops tool"],
       appCategory: "BusinessApplication",
     },
   },

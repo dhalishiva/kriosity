@@ -3,7 +3,7 @@ export const site = {
   url: "https://kriosity.in",
   tagline: "Focused software for the problems big systems leave behind.",
   description:
-    "Kriosity is an independent software studio building focused B2B tools: duplicate-payment detection, appointment recovery, monthly fee collection, AI governance, large file transfer and industrial connectivity.",
+    "Kriosity is an independent software studio building focused B2B tools: duplicate-payment detection, appointment recovery, monthly fee collection, AI governance, multi-app founder ops, large file transfer and industrial connectivity.",
   // General enquiries, sales and partnerships.
   email: "hello@kriosity.in",
   // Customers who need help with an existing account.

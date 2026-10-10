@@ -29,14 +29,14 @@ const facets: Facet[] = [
   { pts: [T, IL, CM], shade: 0.75 },
   { pts: [T, CM, IR], shade: 0.6 },
   { pts: [T, IR, UR], shade: 0.45 },
-  { pts: [UL, ML, G1, IL], shade: 0.55 },
+  { pts: [UL, ML, G1, IL], slug: "kriosityops" },
   { pts: [IL, G1, G2, CM], slug: "aegistra" },
   { pts: [CM, G2, G3, IR], slug: "beamdrop" },
   { pts: [IR, G3, MR, UR], slug: "mahina" },
   { pts: [ML, G1, B], slug: "gateway" },
   { pts: [G1, G2, B], slug: "paidtwice" },
   { pts: [G2, G3, B], slug: "slotrecover" },
-  { pts: [G3, MR, B], fill: "#14203A" },
+  { pts: [G3, MR, B], shade: 0.3 },
 ];
 
 const centroid = (pts: P[]): P => [

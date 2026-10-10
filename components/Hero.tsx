@@ -43,8 +43,8 @@ export default function Hero() {
             transition={{ duration: 0.7, ease, delay: 0.55 }}
             className="mt-6 max-w-[40rem] text-lg text-slate md:text-xl"
           >
-            Six small tools from an independent studio: catch duplicate vendor payments, refill cancelled appointments,
-            collect monthly fees on WhatsApp and UPI, keep the AI register customers ask about, send files of any size,
+            Seven small tools from an independent studio: catch duplicate vendor payments, refill cancelled appointments,
+            collect monthly fees on WhatsApp and UPI, keep the AI register customers ask about, track every app you run, send files of any size,
             and get PLC data onto OPC UA.
           </motion.p>
 
