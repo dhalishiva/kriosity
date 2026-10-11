@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Script from "next/script";
 import Providers from "@/components/Providers";
 import "./globals.css";
 import { site } from "@/lib/site";
@@ -10,6 +11,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import FloatingActions from "@/components/FloatingActions";
+
+// Google Analytics 4 measurement ID for kriosity.in
+const GA_ID = "G-8KFYLM7GT9";
 
 const bricolage = localFont({
   src: "./fonts/bricolage.woff2",
@@ -118,6 +122,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <JsonLd data={orgLd} />
         <Analytics />
         <SpeedInsights />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`}
+        </Script>
       </body>
     </html>
   );

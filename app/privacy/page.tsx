@@ -5,19 +5,23 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy policy",
-  description: "How kriosity.in handles visitor data: cookieless analytics, no tracking for advertising, and no data sold.",
+  description: "How kriosity.in handles visitor data: privacy-friendly analytics, no advertising, and no data sold.",
   alternates: { canonical: "/privacy" },
 };
 
 export default function Privacy() {
   return (
     <>
-      <PageHeader title="Privacy policy" intro="Last updated 4 October 2026. This covers kriosity.in. Each product has its own policy on its own site." />
+      <PageHeader title="Privacy policy" intro="Last updated 11 October 2026. This covers kriosity.in. Each product has its own policy on its own site." />
       <Prose>
         <h2>What this site collects</h2>
         <p>
           kriosity.in uses Vercel Web Analytics and Speed Insights to count page views and measure performance. They do not use
-          cookies and do not identify you personally. We see totals such as page views, referrers, country and device type.
+          cookies and do not identify you personally. We also use Google Analytics, which sets first-party cookies to tell new
+          visitors from returning ones and to understand which pages people use. We see totals such as page views, referrers,
+          country and device type, and we do not use this data for advertising. You can block these cookies in your browser
+          settings or with Google&rsquo;s{" "}
+          <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">opt-out add-on</a>.
         </p>
         <h2>When you contact us</h2>
         <p>
