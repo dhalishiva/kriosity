@@ -11,7 +11,13 @@ export const site = {
   // WhatsApp number in international format, digits only (e.g. "919876543210").
   // Leave empty to hide the WhatsApp button.
   whatsapp: "919716414417",
-  founder: "Shiva",
+  founder: "Shiva Dhali",
+  // Legal status, shown in the footer, About and Terms.
+  udyam: "UDYAM-UP-28-0246166",
+  legalLine:
+    "Kriosity is a sole proprietorship registered with the Ministry of MSME, Government of India (Udyam: UDYAM-UP-28-0246166).",
+  paymentsLine:
+    "Payments for Kriosity products are collected in the name of Shiva Dhali, the founder and proprietor of Kriosity.",
   location: "Noida, India",
   github: "https://github.com/dhalishiva",
   keywords: [

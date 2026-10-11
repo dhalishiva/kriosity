@@ -63,9 +63,12 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="wrap relative flex flex-col gap-2 border-t border-white/10 py-6 text-sm text-white/50 sm:flex-row sm:justify-between">
-        <p>© {new Date().getFullYear()} Kriosity. All rights reserved.</p>
-        <p>Made in Noida, India</p>
+      <div className="wrap relative border-t border-white/10 py-6 text-sm text-white/50">
+        <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
+          <p>© {new Date().getFullYear()} Kriosity. Created by {site.founder}.</p>
+          <p>Made in Noida, India</p>
+        </div>
+        <p className="mt-3 max-w-3xl text-xs leading-relaxed text-white/40">{site.legalLine}</p>
       </div>
     </footer>
   );

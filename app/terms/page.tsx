@@ -12,14 +12,24 @@ export const metadata: Metadata = {
 export default function Terms() {
   return (
     <>
-      <PageHeader title="Terms of use" intro="Last updated 4 October 2026. These terms cover this website. Each product has its own terms of service." />
+      <PageHeader title="Terms of use" intro="Last updated 11 October 2026. These terms cover this website. Each product has its own terms of service." />
       <Prose>
+        <h2>Who we are</h2>
+        <p>
+          kriosity.in is run by Kriosity, created by {site.founder}. {site.legalLine} Kriosity is based in Noida, Uttar
+          Pradesh, India.
+        </p>
         <h2>Using this site</h2>
         <p>You may browse and share this site freely. Don&rsquo;t attempt to disrupt it, scrape it at volume or misrepresent it.</p>
         <h2>Products and prices</h2>
         <p>
           Descriptions and prices here are a summary. The product&rsquo;s own website and checkout state the binding price and
           terms at the time you buy. Planned features and planned prices for products in development may change.
+        </p>
+        <h2>Payments</h2>
+        <p>
+          {site.paymentsLine} The name on your card or bank statement may therefore show Shiva Dhali. Questions about a
+          charge go to <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>.
         </p>
         <h2>Names and marks</h2>
         <p>

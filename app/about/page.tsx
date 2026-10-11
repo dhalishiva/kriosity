@@ -51,6 +51,15 @@ export default function AboutPage() {
             <Mark size={56} />
             <dl className="mt-8 space-y-5">
               <div>
+                <dt className="text-sm text-slate">Founder and proprietor</dt>
+                <dd className="font-display text-xl font-semibold">{site.founder}</dd>
+              </div>
+              <div>
+                <dt className="text-sm text-slate">Registered as</dt>
+                <dd className="font-display text-xl font-semibold">MSME sole proprietorship</dd>
+                <dd className="text-sm text-slate">Udyam {site.udyam}</dd>
+              </div>
+              <div>
                 <dt className="text-sm text-slate">Based in</dt>
                 <dd className="font-display text-xl font-semibold">{site.location}</dd>
               </div>
