@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import NavLink from "@/components/NavLink";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
@@ -47,7 +48,7 @@ export default function Header() {
             <ul className="flex items-center gap-1">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <Link
+                  <NavLink
                     href={item.href}
                     className={`relative isolate block rounded-full px-4 py-2 text-[0.95rem] font-medium transition-colors ${
                       isActive(item.href) ? "text-ink" : "text-slate hover:text-ink"
@@ -61,7 +62,7 @@ export default function Header() {
                       />
                     )}
                     {item.label}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -109,12 +110,12 @@ export default function Header() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.08 + i * 0.05 }}
                   >
-                    <Link
+                    <NavLink
                       href={item.href}
                       className="block border-b border-rule py-4 font-display text-4xl font-semibold tracking-tight"
                     >
                       {item.label}
-                    </Link>
+                    </NavLink>
                   </motion.li>
                 ))}
               </ul>

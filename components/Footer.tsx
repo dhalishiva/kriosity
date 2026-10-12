@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NavLink from "@/components/NavLink";
 import { Mark } from "./Logo";
 import ProductGlyph from "./ProductGlyph";
 import { products } from "@/lib/products";
@@ -39,9 +40,9 @@ export default function Footer() {
           <ul className="mt-4 space-y-2.5">
             {nav.map((n) => (
               <li key={n.href}>
-                <Link href={n.href} className="link-u hover:text-white">
+                <NavLink href={n.href} className="link-u hover:text-white">
                   {n.label}
-                </Link>
+                </NavLink>
               </li>
             ))}
             <li>
