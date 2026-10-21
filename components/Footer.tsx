@@ -5,6 +5,16 @@ import ProductGlyph from "./ProductGlyph";
 import { products } from "@/lib/products";
 import { nav, site } from "@/lib/site";
 
+export function CoffeeIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true" className="transition-transform duration-300 group-hover:-rotate-12">
+      <path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinejoin="round" />
+      <path d="M16 10.5h1.5a2.5 2.5 0 0 1 0 5H16" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" />
+      <path d="M8 3.5c-.6.8.6 1.4 0 2.3M12 3.5c-.6.8.6 1.4 0 2.3" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-deep text-white/80">
@@ -19,6 +29,17 @@ export default function Footer() {
           <a href={`mailto:${site.email}`} className="link-u mt-6 inline-block font-medium text-white">
             {site.email}
           </a>
+          {site.buyMeACoffee && (
+            <a
+              href={site.buyMeACoffee}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-5 flex w-fit items-center gap-2.5 rounded-full bg-[#FFDD00] py-2 pl-3 pr-4 text-sm font-semibold text-[#0D0C22] transition-transform duration-200 hover:-translate-y-0.5"
+            >
+              <CoffeeIcon />
+              Buy me a coffee
+            </a>
+          )}
         </div>
 
         <div>

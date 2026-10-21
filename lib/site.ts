@@ -20,6 +20,8 @@ export const site = {
     "Payments for Kriosity products are collected in the name of Shiva Dhali, the founder and proprietor of Kriosity.",
   location: "Noida, India",
   github: "https://github.com/dhalishiva",
+  // Tip jar. Leave empty to hide the coffee links.
+  buyMeACoffee: "https://buymeacoffee.com/shivadhali",
   keywords: [
     "Kriosity",
     "B2B SaaS tools",

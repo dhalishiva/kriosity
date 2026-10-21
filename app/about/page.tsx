@@ -4,6 +4,7 @@ import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import { Mark } from "@/components/Logo";
+import { CoffeeIcon } from "@/components/Footer";
 import { products } from "@/lib/products";
 import { site } from "@/lib/site";
 
@@ -79,6 +80,22 @@ export default function AboutPage() {
                   <a href={`mailto:${site.email}`} className="link-u font-display text-xl font-semibold">{site.email}</a>
                 </dd>
               </div>
+              {site.buyMeACoffee && (
+                <div>
+                  <dt className="text-sm text-slate">Like what I build?</dt>
+                  <dd className="mt-2">
+                    <a
+                      href={site.buyMeACoffee}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-2.5 rounded-full bg-[#FFDD00] py-2 pl-3 pr-4 text-sm font-semibold text-[#0D0C22] transition-transform duration-200 hover:-translate-y-0.5"
+                    >
+                      <CoffeeIcon />
+                      Buy me a coffee
+                    </a>
+                  </dd>
+                </div>
+              )}
             </dl>
           </div>
         </Reveal>
