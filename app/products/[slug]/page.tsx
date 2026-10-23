@@ -7,6 +7,7 @@ import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import JsonLd from "@/components/JsonLd";
 import { getProduct, products } from "@/lib/products";
+import { guidesFor } from "@/lib/guides";
 import { ctaHref, siteHost } from "@/lib/cta";
 import { site } from "@/lib/site";
 
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: PageProps<"/products/[slug]">
     keywords: p.seo.keywords,
     alternates: { canonical: `/products/${p.slug}` },
     openGraph: { type: "website", url, title: p.seo.title, description: p.seo.description },
-    twitter: { card: "summary_large_image", title: p.seo.title, description: p.seo.description },
+    twitter: { card: "summary_large_image", site: site.xHandle, creator: site.xHandle, title: p.seo.title, description: p.seo.description },
   };
 }
 
@@ -37,6 +38,7 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
   if (!p) notFound();
 
   const others = products.filter((o) => o.slug !== p.slug);
+  const productGuides = guidesFor(p.slug);
   const url = `${site.url}/products/${p.slug}`;
 
   const offers = p.tiers
@@ -205,6 +207,28 @@ export default async function ProductPage({ params }: PageProps<"/products/[slug
           <Faq p={p} />
         </Reveal>
       </section>
+
+      {/* Guides for this product */}
+      {productGuides.length > 0 && (
+        <section className="wrap pb-20 md:pb-28">
+          <h2 className="text-3xl md:text-4xl" style={{ fontVariationSettings: '"wdth" 85' }}>Guides</h2>
+          <ul className="mt-6 divide-y divide-rule border-y border-rule">
+            {productGuides.map((g) => (
+              <li key={g.slug}>
+                <Link href={`/guides/${g.slug}`} className="group flex items-center justify-between gap-6 py-5">
+                  <span>
+                    <span className="block font-display text-xl font-semibold transition-colors group-hover:text-[var(--c)]" style={{ ["--c" as string]: p.color }}>{g.title}</span>
+                    <span className="mt-1 block text-sm text-slate">{g.description}</span>
+                  </span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" className="shrink-0 transition-transform group-hover:translate-x-1" style={{ color: p.color }} aria-hidden="true">
+                    <path d="M2 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* More products */}
       <section className="border-t border-rule bg-paper py-16 md:py-20">

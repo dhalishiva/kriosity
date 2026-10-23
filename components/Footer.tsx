@@ -15,6 +15,29 @@ export function CoffeeIcon({ size = 18 }: { size?: number }) {
   );
 }
 
+const social = [
+  {
+    label: "YouTube",
+    href: site.youtube,
+    icon: "M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z",
+  },
+  {
+    label: "X",
+    href: site.founderX,
+    icon: "M18.2 2.3h3.4l-7.4 8.4 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.9 2.3h7l4.8 6.4 5.5-6.4Zm-1.2 17.9h1.9L7.1 4.2H5.1l11.9 16Z",
+  },
+  {
+    label: "LinkedIn",
+    href: site.founderLinkedIn,
+    icon: "M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1a3.8 3.8 0 0 1 3.4-1.9c3.6 0 4.3 2.4 4.3 5.5v6.3ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z",
+  },
+  {
+    label: "GitHub",
+    href: site.github,
+    icon: "M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z",
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-deep text-white/80">
@@ -40,6 +63,23 @@ export default function Footer() {
               Buy me a coffee
             </a>
           )}
+          <ul className="mt-6 flex gap-2" aria-label="Kriosity elsewhere">
+            {social.map((s) => (
+              <li key={s.label}>
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener me"
+                  aria-label={s.label}
+                  className="grid h-10 w-10 place-items-center rounded-full text-white/70 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.15)] transition-colors hover:bg-white/10 hover:text-white"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                    <path d={s.icon} />
+                  </svg>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div>
@@ -66,6 +106,9 @@ export default function Footer() {
                 </NavLink>
               </li>
             ))}
+            <li>
+              <Link href="/guides" className="link-u hover:text-white">Guides</Link>
+            </li>
             <li>
               <Link href="/privacy" className="link-u hover:text-white">Privacy</Link>
             </li>

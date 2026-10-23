@@ -80,6 +80,15 @@ export default function AboutPage() {
                   <a href={`mailto:${site.email}`} className="link-u font-display text-xl font-semibold">{site.email}</a>
                 </dd>
               </div>
+              <div>
+                <dt className="text-sm text-slate">Find me on</dt>
+                <dd className="mt-1 flex flex-wrap gap-x-4 gap-y-1 font-display text-lg font-semibold">
+                  <a href={site.founderX} target="_blank" rel="noopener me" className="link-u">X</a>
+                  <a href={site.founderLinkedIn} target="_blank" rel="noopener me" className="link-u">LinkedIn</a>
+                  <a href={site.youtube} target="_blank" rel="noopener" className="link-u">YouTube</a>
+                  <a href={site.github} target="_blank" rel="noopener me" className="link-u">GitHub</a>
+                </dd>
+              </div>
               {site.buyMeACoffee && (
                 <div>
                   <dt className="text-sm text-slate">Like what I build?</dt>
