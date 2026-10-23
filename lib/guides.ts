@@ -32,7 +32,7 @@ export const guides: Guide[] = [
     slug: "whatsapp-fee-reminder-for-tuition-teachers",
     product: "mahina",
     title: "WhatsApp fee reminders for tuition teachers and coaching classes",
-    seoTitle: "WhatsApp Fee Reminder for Tuition Teachers: Messages, Timing and UPI Links",
+    seoTitle: "WhatsApp Fee Reminders for Tuition Teachers: Messages and UPI Links",
     description:
       "How tuition teachers and coaching classes can collect monthly fees on time with WhatsApp reminders: when to send them, what to write, and how a UPI payment link gets parents to pay in one tap.",
     keywords: ["WhatsApp fee reminder", "tuition fee reminder message", "coaching class fee collection", "fee reminder for parents", "UPI fee payment link"],
@@ -307,7 +307,7 @@ export const guides: Guide[] = [
     slug: "reduce-no-shows-salons-and-clinics",
     product: "slotrecover",
     title: "How salons and clinics can reduce no-shows and refill cancelled slots",
-    seoTitle: "How to Reduce No-Shows at Salons and Clinics (and Refill Cancellations)",
+    seoTitle: "How Salons and Clinics Can Reduce No-Shows and Fill Cancellations",
     description:
       "Practical ways for salons, spas, clinics and trainers to cut no-shows: confirmation timing, cancellation policies, deposits, and using a waitlist to refill cancelled appointments.",
     keywords: ["reduce no-shows salon", "clinic no-show policy", "appointment confirmation", "salon waitlist", "fill cancelled appointments"],

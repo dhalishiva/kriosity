@@ -10,7 +10,7 @@ import ProductGlyph from "@/components/ProductGlyph";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Products — B2B software for finance, operations and industry",
+  title: "Products — B2B tools for finance, services and industry",
   description:
     "Every Kriosity product in one place: PaidTwice, SlotRecover, Mahina, Aegistra, KriosityOps, BeamDrop and Gateway. Compare what each does, who it is for and what it costs.",
   alternates: { canonical: "/products" },

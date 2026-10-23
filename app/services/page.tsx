@@ -6,7 +6,7 @@ import JsonLd from "@/components/JsonLd";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Services — AP automation, manufacturing quality systems and custom SaaS",
+  title: "Services — AP automation, InfinityQS and custom SaaS",
   description:
     "Consulting from Kriosity: Tungsten (Kofax) ReadSoft and AP automation, InfinityQS administration and archival, industrial OPC connectivity, and custom SaaS builds.",
   alternates: { canonical: "/services" },

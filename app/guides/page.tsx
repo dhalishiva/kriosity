@@ -10,7 +10,7 @@ import { getProduct, products } from "@/lib/products";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Guides — Fee collection, duplicate payments, no-shows and more",
+  title: "Guides — Fees, duplicate payments, no-shows and more",
   description:
     "Practical, step-by-step guides from Kriosity: collecting monthly fees on WhatsApp and UPI, finding duplicate payments in QuickBooks, Xero and NetSuite, reducing no-shows, answering AI security questionnaires and running several apps.",
   alternates: { canonical: "/guides" },
