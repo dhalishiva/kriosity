@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Terms() {
   return (
     <>
-      <PageHeader title="Terms of use" intro="Last updated 11 October 2026. These terms cover this website. Each product has its own terms of service." />
+      <PageHeader title="Terms of use" intro="Last updated 24 October 2026. These terms cover this website. Each product has its own terms of service." />
       <Prose>
         <h2>Who we are</h2>
         <p>
@@ -28,7 +28,7 @@ export default function Terms() {
         </p>
         <h2>Payments</h2>
         <p>
-          {site.paymentsLine} The name on your card or bank statement may therefore show Shiva Dhali. Questions about a
+          {site.paymentsLine} Your card or bank statement may show either Kriosity or Shiva Dhali. Questions about a
           charge go to <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>.
         </p>
         <h2>Names and marks</h2>

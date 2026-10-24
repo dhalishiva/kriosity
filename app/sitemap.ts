@@ -13,7 +13,7 @@ const pageUpdated: Record<string, string> = {
   "/about": "2026-10-23",
   "/contact": "2026-10-05",
   "/privacy": "2026-10-11",
-  "/terms": "2026-10-11",
+  "/terms": "2026-10-24",
 };
 
 // Product pages: content last changed in lib/products.ts, or when guides were linked from them.

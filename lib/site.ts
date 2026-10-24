@@ -17,7 +17,7 @@ export const site = {
   legalLine:
     "Kriosity is a sole proprietorship registered with the Ministry of MSME, Government of India (Udyam: UDYAM-UP-28-0246166).",
   paymentsLine:
-    "Payments for Kriosity products are collected in the name of Shiva Dhali, the founder and proprietor of Kriosity.",
+    "Kriosity is a sole proprietorship, so payments for Kriosity products are collected by its founder and proprietor, Shiva Dhali.",
   location: "Noida, India",
   github: "https://github.com/dhalishiva",
   // Kriosity's own channels.
