@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 const pageUpdated: Record<string, string> = {
   "": "2026-10-08",
   "/products": "2026-10-10",
-  "/guides": "2026-10-23",
+  "/guides": "2026-10-24",
   "/services": "2026-10-08",
   "/about": "2026-10-23",
   "/contact": "2026-10-05",
@@ -23,7 +23,7 @@ const productUpdated: Record<string, string> = {
   mahina: "2026-10-23",
   aegistra: "2026-10-23",
   kriosityops: "2026-10-23",
-  beamdrop: "2026-10-10",
+  beamdrop: "2026-10-24",
   gateway: "2026-10-10",
 };
 

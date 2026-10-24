@@ -490,6 +490,135 @@ export const guides: Guide[] = [
       { q: "How many apps is too many to track by memory?", a: "For most people, anything beyond two or three. That's why the free plan covers two apps." },
     ],
   },
+
+  // ──────────────────────────── BeamDrop ────────────────────────────
+  {
+    slug: "send-large-files-without-size-limit",
+    product: "beamdrop",
+    title: "How to send large files without a size limit",
+    seoTitle: "Send Large Files With No Size Limit: A Free WeTransfer Alternative",
+    description:
+      "Why file transfer sites cap file sizes, and how browser-to-browser transfer sends a file of any size straight to another device, with no upload, no account and no storage limit.",
+    keywords: ["send large files", "WeTransfer alternative", "file transfer no size limit", "send big files free", "peer to peer file transfer"],
+    published: "2026-10-24",
+    updated: "2026-10-24",
+    intro:
+      "You have a 15 GB video, a folder of raw photos zipped into one huge file, or a project export that is far too big for email. Most free transfer services stop you at a size cap, or make you wait for a long upload before the other person can even start downloading. There is another way to move big files that skips the upload completely.",
+    sections: [
+      {
+        id: "why-limits",
+        heading: "Why most transfer sites have size limits",
+        paras: [
+          "Services like WeTransfer, Google Drive links and email attachments all work the same way: your file is uploaded to their servers first, stored there, and then downloaded by the other person. Storage and bandwidth cost money, so free plans cap the file size and delete files after a while.",
+          "It also means every file is sent twice: once up to the server and once down to the receiver. For a large file, that doubles the waiting.",
+        ],
+      },
+      {
+        id: "direct",
+        heading: "Send it directly instead",
+        paras: [
+          "Modern browsers can connect two devices to each other directly, using the same technology that powers video calls (WebRTC). The file streams from one browser straight to the other over an encrypted connection. A small server only introduces the two devices; the file itself never passes through it.",
+          "Because nothing is stored in the middle, there is no size cap to enforce. The practical limit is free space on the receiving device.",
+        ],
+      },
+      {
+        id: "when",
+        heading: "When direct transfer is the better choice",
+        list: [
+          "Very large files: videos, disk images, RAW photo archives, game or design project files.",
+          "Moving files between your own devices, such as laptop to phone or work computer to home computer.",
+          "Sending to someone who is ready to receive it right now.",
+          "Files you would rather not leave sitting on someone else's server.",
+        ],
+      },
+      {
+        id: "when-not",
+        heading: "When an upload service still makes sense",
+        paras: [
+          "Direct transfer needs both devices online and the page open until the file finishes. If the other person will download it tomorrow, or you want to send one link to many people, an upload service is the better tool. Some strict office or mobile networks also block direct connections between devices.",
+        ],
+      },
+      {
+        id: "tips",
+        heading: "Tips for a smooth large transfer",
+        list: [
+          "Keep both devices plugged in and the screens awake until it finishes.",
+          "Wi-Fi is usually faster and steadier than mobile data for big files.",
+          "Check the receiving device has enough free space before you start.",
+          "Send one large file at a time. Zip a folder first if you need to send many files.",
+        ],
+      },
+    ],
+    productPitch:
+      "BeamDrop sends files this way, in the browser. Pick a file on one device and you get a six-character code and a QR code. Open BeamDrop on the other device, enter the code or scan the QR, and tap Accept. The file streams straight across over an encrypted connection and is saved as it arrives, so large files don't fill the browser's memory. There's no account, no app to install and no size limit, and it's free. It works in current Chrome, Edge, Firefox and Safari on computers and phones.",
+    faq: [
+      { q: "Is there really no file size limit?", a: "BeamDrop doesn't set one, because the file is never uploaded. The practical limits are free storage on the receiving device and keeping both devices open until it finishes." },
+      { q: "Can BeamDrop see my files?", a: "No. Files go straight from one device to the other over an encrypted connection and never reach BeamDrop's servers." },
+      { q: "Do both people need an account?", a: "No. Both sides just open BeamDrop in a browser." },
+    ],
+  },
+  {
+    slug: "send-large-file-from-pc-to-phone",
+    product: "beamdrop",
+    title: "How to send a large file from PC to phone without uploading",
+    seoTitle: "How to Send a Large File From PC to Phone Without Uploading It",
+    description:
+      "The quickest ways to move a big video or file from a computer to an Android phone or iPhone, and how to do it in the browser with no cable, no app and no cloud upload.",
+    keywords: ["send file from pc to phone", "transfer large file to iPhone", "laptop to Android file transfer", "send video from computer to phone", "file transfer without cable"],
+    published: "2026-10-24",
+    updated: "2026-10-24",
+    intro:
+      "Getting a big file from your computer onto your phone sounds simple until the cable is missing, the cloud upload crawls, or the messaging app compresses your video into mush. Here are the options, and the one that works with nothing but a browser on each device.",
+    sections: [
+      {
+        id: "options",
+        heading: "The usual options and their catches",
+        list: [
+          "USB cable: fast and reliable, if you have the right cable, and on Android if the phone is set to file transfer mode.",
+          "Cloud storage (Google Drive, OneDrive, iCloud): upload from the PC, then download on the phone. Large files take twice as long and use up your storage.",
+          "Messaging apps: easy, but they cap file sizes and often compress photos and videos.",
+          "Nearby Share, Quick Share or AirDrop: great when both devices are from the same ecosystem, but they don't cover a Windows PC to an iPhone.",
+        ],
+      },
+      {
+        id: "browser",
+        heading: "Use the browser on both devices",
+        paras: [
+          "A browser-to-browser transfer works between any computer and any phone: Windows to iPhone, Mac to Android, Linux to anything. Both devices open the same web page, connect with a short code, and the file streams directly from one to the other without being uploaded anywhere.",
+        ],
+        list: [
+          "On the computer, open the transfer page and choose the file.",
+          "Note the short code, or show the QR code on screen.",
+          "On the phone, open the same page and enter the code or scan the QR code.",
+          "Accept the file on the phone and keep both screens open until it finishes.",
+        ],
+        ordered: true,
+      },
+      {
+        id: "iphone",
+        heading: "A note for iPhone and iPad",
+        paras: [
+          "iOS limits how much a browser can download in one go, so very large files (several gigabytes) are more reliable when received on a computer or an Android phone. For videos and files of a few hundred megabytes, receiving on an iPhone works well.",
+        ],
+      },
+      {
+        id: "speed",
+        heading: "Making it fast",
+        list: [
+          "Put both devices on the same Wi-Fi network if you can.",
+          "Keep the phone's screen on during the transfer; phones pause background work to save battery.",
+          "Plug the phone in for long transfers.",
+        ],
+      },
+    ],
+    productPitch:
+      "BeamDrop is built for exactly this. Open it on your computer, pick the file and you get a six-character code and a QR code. Scan the QR with your phone, tap Accept, and the file streams straight across over an encrypted connection. Nothing is uploaded, nothing is stored, and there's no app or account. It's free and works in current Chrome, Edge, Firefox and Safari.",
+    faq: [
+      { q: "Do the PC and phone need to be on the same Wi-Fi?", a: "Not necessarily, but it's usually faster. Some strict office or mobile networks block direct connections between devices, and then the same Wi-Fi is the easiest fix." },
+      { q: "Will my video lose quality?", a: "No. The file is sent byte for byte, unlike messaging apps that compress video." },
+      { q: "Can I send several files at once?", a: "BeamDrop sends one file per transfer. Zip a folder first if you want to send many files together." },
+    ],
+  },
 ];
 
 export const getGuide = (slug: string) => guides.find((g) => g.slug === slug);
