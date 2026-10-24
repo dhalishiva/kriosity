@@ -4,7 +4,7 @@ import PageHeader from "@/components/PageHeader";
 import Reveal from "@/components/Reveal";
 import CtaBand from "@/components/CtaBand";
 import { Mark } from "@/components/Logo";
-import { CoffeeIcon } from "@/components/Footer";
+import { CoffeeIcon, social } from "@/components/Footer";
 import { products } from "@/lib/products";
 import { site } from "@/lib/site";
 
@@ -82,11 +82,21 @@ export default function AboutPage() {
               </div>
               <div>
                 <dt className="text-sm text-slate">Find me on</dt>
-                <dd className="mt-1 flex flex-wrap gap-x-4 gap-y-1 font-display text-lg font-semibold">
-                  <a href={site.founderX} target="_blank" rel="noopener me" className="link-u">X</a>
-                  <a href={site.founderLinkedIn} target="_blank" rel="noopener me" className="link-u">LinkedIn</a>
-                  <a href={site.youtube} target="_blank" rel="noopener" className="link-u">YouTube</a>
-                  <a href={site.github} target="_blank" rel="noopener me" className="link-u">GitHub</a>
+                <dd className="mt-3 grid max-w-sm grid-cols-2 gap-2">
+                  {social.map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel={s.label === "YouTube" ? "noopener" : "noopener me"}
+                      className="flex min-h-11 items-center gap-2.5 rounded-full bg-frost py-2 pl-3 pr-4 text-sm font-semibold shadow-[0_0_0_1px_var(--color-rule)] transition-[box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_0_1.5px_var(--color-ink)]"
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                        <path d={s.icon} />
+                      </svg>
+                      {s.label}
+                    </a>
+                  ))}
                 </dd>
               </div>
               {site.buyMeACoffee && (

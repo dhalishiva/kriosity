@@ -15,7 +15,8 @@ export function CoffeeIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-const social = [
+// Shared with the About page's "Find me on" row.
+export const social = [
   {
     label: "YouTube",
     href: site.youtube,
